@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5DCF2EF72CFD8E1B895682FEB1C57D16321F9C4E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5DCF2EF72CFD8E1B895682FEB1C57D16321F9C4E" : 9223372036854775807,
+    "7C51F53838B9D6F92676904707417B45BCC3E38E" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E8C461B4-BAC4-4C65-9B80-5DC071E952C6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5DCF2EF72CFD8E1B895682FEB1C57D16321F9C4E" : "Astro_Test\/",
+    "7C51F53838B9D6F92676904707417B45BCC3E38E" : "Robust_Tech_House_Test\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "AstroTest",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "AstroTest.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lethanhtam1604\/Astro_Test.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5DCF2EF72CFD8E1B895682FEB1C57D16321F9C4E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lethanhtam1604\/Robust_Tech_House_Test.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7C51F53838B9D6F92676904707417B45BCC3E38E"
+    }
+  ]
+}

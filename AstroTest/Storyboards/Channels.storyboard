@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Channels View Controller-->
+        <scene sceneID="SQo-dw-TxG">
+            <objects>
+                <viewController storyboardIdentifier="ChannelsViewController" id="LuE-Zu-HuW" customClass="ChannelsViewController" customModule="AstroTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yXU-Wy-SNP"/>
+                        <viewControllerLayoutGuide type="bottom" id="rLJ-dH-cFg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eo5-Sh-ds6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="g7X-QE-TZ3">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="UgB-es-dzl"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wap-7e-3cc">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rLJ-dH-cFg" firstAttribute="top" secondItem="Wap-7e-3cc" secondAttribute="bottom" id="Mfw-O6-Lo4"/>
+                            <constraint firstItem="Wap-7e-3cc" firstAttribute="top" secondItem="g7X-QE-TZ3" secondAttribute="bottom" id="SeI-e7-aq1"/>
+                            <constraint firstItem="g7X-QE-TZ3" firstAttribute="leading" secondItem="eo5-Sh-ds6" secondAttribute="leading" id="Y4y-GV-pfA"/>
+                            <constraint firstAttribute="trailing" secondItem="Wap-7e-3cc" secondAttribute="trailing" id="irz-3j-ffu"/>
+                            <constraint firstItem="Wap-7e-3cc" firstAttribute="leading" secondItem="eo5-Sh-ds6" secondAttribute="leading" id="jfY-W4-FxI"/>
+                            <constraint firstItem="g7X-QE-TZ3" firstAttribute="top" secondItem="yXU-Wy-SNP" secondAttribute="bottom" id="yHz-xB-ZYT"/>
+                            <constraint firstAttribute="trailing" secondItem="g7X-QE-TZ3" secondAttribute="trailing" id="yJo-WD-ayo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="g7X-QE-TZ3" id="FAZ-38-4ox"/>
+                        <outlet property="tableView" destination="Wap-7e-3cc" id="OEE-dX-NZn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fSJ-lq-dvb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="220" y="160.56971514242881"/>
+        </scene>
+    </scenes>
+</document>
