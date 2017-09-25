@@ -22,6 +22,7 @@ class ChannelsViewController: BaseViewController {
     fileprivate let channelPresenter = ChannelPresenter()
     fileprivate var channels: [Channel] = []
     fileprivate var allChannels: [Channel] = []
+    fileprivate var isLoadData = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +69,17 @@ class ChannelsViewController: BaseViewController {
         channelPresenter.getChannels()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if isLoadData {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        isLoadData = true
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
@@ -101,14 +113,18 @@ extension ChannelsViewController: ChannelView {
         if let channelList = channels {
             self.allChannels = channelList
             self.channels = channelList
-            tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
 
     func setSearchChannels(channels: [Channel]?) {
         if let channelList = channels {
             self.channels = channelList
-            tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
 }

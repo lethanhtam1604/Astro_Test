@@ -17,6 +17,10 @@ class ChannelTableViewCell: UITableViewCell {
 
     static let kCellId = "ChannelTableViewCell"
 
+    fileprivate var favouriteTintedImg: UIImage!
+
+    fileprivate var currentChannel: Channel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -28,32 +32,54 @@ class ChannelTableViewCell: UITableViewCell {
         containerView.layer.masksToBounds = false
 
         let favouriteImg = UIImage(named: "ic_favourite")
-        let favouriteTintedImg = favouriteImg?.withRenderingMode(.alwaysTemplate)
+        favouriteTintedImg = favouriteImg?.withRenderingMode(.alwaysTemplate)
         favouriteBtn.setImage(favouriteTintedImg, for: .normal)
-        favouriteBtn.tintColor = Global.colorGray
 
         logoImgView.layer.cornerRadius = 5
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
 
     func bindingData(_ channel: Channel) {
-
+        currentChannel = channel
         bindingDataHeightForCell(channel)
 
         if let path = channel.currentChannelLogo?.value {
             logoImgView.loadImagesUsingUrlString(urlString: path)
         }
+
+        if let channelId = channel.channelId {
+            let dicChannels = FavouriteManager.getInstance().getDicFavouriteChannels()
+            if dicChannels[channelId] != nil {
+                setFavourite()
+            } else {
+                setUnFavourite()
+            }
+        } else {
+            setUnFavourite()
+        }
     }
 
     @IBAction func actionTapToFavouriteBtn(_ sender: Any) {
-        let favouriteImg = UIImage(named: "ic_favourite")
-        let favouriteTintedImg = favouriteImg?.withRenderingMode(.alwaysTemplate)
-        favouriteBtn.setImage(favouriteTintedImg, for: .normal)
+        if favouriteBtn.tintColor == Global.colorGray {
+            setFavourite()
+            DatabaseHelper.getInstance().saveChannel(currentChannel)
+            FavouriteManager.getInstance().addItemFavouriteChannel(currentChannel)
+        } else {
+            setUnFavourite()
+            DatabaseHelper.getInstance().deleteChannel(currentChannel)
+            FavouriteManager.getInstance().removeItemFavouriteChannel(currentChannel)
+        }
+    }
+
+    func setFavourite() {
         favouriteBtn.tintColor = Global.colorMain
+    }
+
+    func setUnFavourite() {
+        favouriteBtn.tintColor = Global.colorGray
     }
 }
 

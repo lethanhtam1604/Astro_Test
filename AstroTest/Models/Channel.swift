@@ -10,15 +10,19 @@ import UIKit
 
 class Channel: NSObject {
 
-    var channelId: Int?
+    var channelId: Int64?
     var channelStbNumber: String?
     var channelTitle: String?
 
     var channelLogos: [ChannelLogo] = []
     var currentChannelLogo: ChannelLogo?
 
+    override init() {
+
+    }
+
     init(_ channel: [String : Any]) {
-        channelId = channel["channelId"] as? Int
+        channelId = channel["channelId"] as? Int64
         channelStbNumber = channel["channelStbNumber"] as? String
         channelTitle = channel["channelTitle"] as? String
 

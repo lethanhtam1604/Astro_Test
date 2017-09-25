@@ -14,6 +14,10 @@ class ChannelLogo: NSObject {
     var subSystem: String?
     var value: String?
 
+    override init() {
+        super.init()
+    }
+
     init(_ channelLogo: [String : Any]) {
         system = channelLogo["system"] as? String
         subSystem = channelLogo["subSystem"] as? String

@@ -29,6 +29,9 @@ class ChannelPresenter: NSObject {
 
     func getChannels() {
         channelView?.startLoading()
+        DispatchQueue.global().sync {
+            FavouriteManager.getInstance().setFavouriteChannels(DatabaseHelper.getInstance().getChannels() ?? [Channel]())
+        }
         APIHelper.getChannels { [weak self] (_, channels) in
 
             let result = channels?.sorted(by: { (s0, s1) -> Bool in
