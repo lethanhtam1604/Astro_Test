@@ -53,5 +53,42 @@
             </objects>
             <point key="canvasLocation" x="220" y="160.56971514242881"/>
         </scene>
+        <!--Sort-->
+        <scene sceneID="ikv-wW-uYw">
+            <objects>
+                <viewController storyboardIdentifier="SortChannelViewController" id="hbu-UA-YyB" customClass="SortChannelViewController" customModule="AstroTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZZl-8Z-NV4"/>
+                        <viewControllerLayoutGuide type="bottom" id="wbh-Iz-ynG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nhJ-um-27z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="owJ-rv-bjA">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="owJ-rv-bjA" secondAttribute="trailing" id="FWr-W2-Uoy"/>
+                            <constraint firstItem="owJ-rv-bjA" firstAttribute="leading" secondItem="nhJ-um-27z" secondAttribute="leading" id="Ihx-eE-Ckt"/>
+                            <constraint firstItem="owJ-rv-bjA" firstAttribute="top" secondItem="ZZl-8Z-NV4" secondAttribute="bottom" id="XFY-45-nGk"/>
+                            <constraint firstItem="wbh-Iz-ynG" firstAttribute="top" secondItem="owJ-rv-bjA" secondAttribute="bottom" id="tSV-wF-I0k"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sort" id="Ygj-nf-mmA">
+                        <barButtonItem key="leftBarButtonItem" title="CANCEL" id="ZDK-jn-yeH"/>
+                        <barButtonItem key="rightBarButtonItem" title="APPLY" id="dDj-Vn-th9"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="owJ-rv-bjA" id="ceV-M3-Arh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YIH-63-AYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1008.8" y="160.56971514242881"/>
+        </scene>
     </scenes>
 </document>

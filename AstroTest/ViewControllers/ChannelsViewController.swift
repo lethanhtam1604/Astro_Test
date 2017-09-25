@@ -19,13 +19,18 @@ class ChannelsViewController: BaseViewController {
     @IBOutlet fileprivate weak var searchBar: UISearchBar!
     @IBOutlet fileprivate weak var tableView: UITableView!
 
-    let channelPresenter = ChannelPresenter()
-    var channels: [Channel] = []
+    fileprivate let channelPresenter = ChannelPresenter()
+    fileprivate var channels: [Channel] = []
+    fileprivate var allChannels: [Channel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "CHANNELS"
+
+        //setting UI
+        let filterBarButton = UIBarButtonItem(image: UIImage(named: "ic_filter"), style: .done, target: self, action: #selector(actionTapToSortBtn))
+        navigationItem.leftBarButtonItem = filterBarButton
 
         //custom search bar
         searchBar.searchBarStyle = UISearchBarStyle.prominent
@@ -51,11 +56,12 @@ class ChannelsViewController: BaseViewController {
         //setup tableView
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.separatorColor = Global.colorSeparator
+        tableView.separatorStyle = .none
         let cellNib = UINib(nibName: ChannelTableViewCell.kCellId, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: ChannelTableViewCell.kCellId)
         tableView.tableFooterView = UIView()
         tableView.addSubview(refreshControl)
+        tableView.contentOffset = CGPoint(x: 0, y: -refreshControl.frame.size.height)
 
         //load Data
         channelPresenter.attachView(view: self)
@@ -70,12 +76,20 @@ class ChannelsViewController: BaseViewController {
     func handleRefresh(_ refreshControl: UIRefreshControl) {
         channelPresenter.getChannels()
     }
+
+    func actionTapToSortBtn() {
+        let storyboard = UIStoryboard(name: "Channels", bundle: nil)
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "SortChannelViewController") as? SortChannelViewController {
+            viewController.delegate = self
+            let nav = UINavigationController(rootViewController: viewController)
+            present(nav, animated: true, completion: nil)
+        }
+    }
 }
 
 extension ChannelsViewController: ChannelView {
 
     func startLoading() {
-        refreshControl.tintColor = Global.colorMain
         refreshControl.beginRefreshing()
     }
 
@@ -85,9 +99,24 @@ extension ChannelsViewController: ChannelView {
 
     func setChannels(channels: [Channel]?) {
         if let channelList = channels {
+            self.allChannels = channelList
             self.channels = channelList
             tableView.reloadData()
         }
+    }
+
+    func setSearchChannels(channels: [Channel]?) {
+        if let channelList = channels {
+            self.channels = channelList
+            tableView.reloadData()
+        }
+    }
+}
+
+extension ChannelsViewController: SortChannelDelegate {
+
+    func applySort() {
+        channelPresenter.sortChannels(allChannels)
     }
 }
 
@@ -101,15 +130,12 @@ extension ChannelsViewController: UITableViewDataSource {
         return channels.count
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ChannelTableViewCell.kCellId, for: indexPath) as! ChannelTableViewCell //swiftlint:disable:this force_cast
         cell.layoutMargins = UIEdgeInsets.zero
         cell.preservesSuperviewLayoutMargins = false
         cell.separatorInset = UIEdgeInsets.zero
+        cell.selectionStyle = .none
 
         cell.bindingData(channels[indexPath.row])
 
@@ -118,6 +144,13 @@ extension ChannelsViewController: UITableViewDataSource {
 }
 
 extension ChannelsViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ChannelTableViewCell.kCellId) as! ChannelTableViewCell  //swiftlint:disable:this force_cast
+        cell.bindingDataHeightForCell(channels[indexPath.row])
+
+        return cell.heightForCell()
+    }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -135,7 +168,7 @@ extension ChannelsViewController: UISearchBarDelegate {
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-
+        channelPresenter.searchChannels(searchBar.text, allChannels)
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -145,5 +178,6 @@ extension ChannelsViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         searchBar.text = ""
+        channelPresenter.searchChannels(searchBar.text, allChannels)
     }
 }

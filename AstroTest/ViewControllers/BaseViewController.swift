@@ -18,7 +18,7 @@ class BaseViewController: UIViewController {
         view.clipsToBounds = true
 
         navigationController?.navigationBar.barTintColor = UIColor.white
-        navigationController?.navigationBar.tintColor = Global.colorMain
+        navigationController?.navigationBar.tintColor = UIColor.black
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black, NSFontAttributeName: UIFont(name: "OpenSans-semibold", size: 15) ?? UIFont.systemFontSize]
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()

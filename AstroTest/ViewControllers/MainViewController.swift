@@ -11,6 +11,7 @@ import UIKit
 class MainViewController: UITabBarController, UITabBarControllerDelegate, UINavigationControllerDelegate {
 
     fileprivate var channelsViewController: ChannelsViewController!
+    fileprivate var tvGuideViewController: TVGuideViewController!
     fileprivate var favouritesViewController: FavouritesViewController!
     fileprivate var settingsViewController: SettingsViewController!
 
@@ -33,6 +34,11 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate, UINavi
             channelsViewController = viewController
         }
 
+        storyboard = UIStoryboard(name: "TVGuide", bundle: nil)
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "TVGuideViewController") as? TVGuideViewController {
+            tvGuideViewController = viewController
+        }
+
         storyboard = UIStoryboard(name: "Favourites", bundle: nil)
         if let viewController = storyboard.instantiateViewController(withIdentifier: "FavouritesViewController") as? FavouritesViewController {
             favouritesViewController = viewController
@@ -47,15 +53,19 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate, UINavi
         channelsViewController.tabBarItem = channelsBarItem
         let nc1 = UINavigationController(rootViewController: channelsViewController)
 
-        let favouritesBarItem = UITabBarItem(title: "FAVOURITES", image: UIImage(named: "ic_favourite"), tag: 2)
+        let tvGuideBarItem = UITabBarItem(title: "TV GUIDE", image: UIImage(named: "ic_tv"), tag: 2)
+        tvGuideViewController.tabBarItem = tvGuideBarItem
+        let nc2 = UINavigationController(rootViewController: tvGuideViewController)
+
+        let favouritesBarItem = UITabBarItem(title: "FAVOURITES", image: UIImage(named: "ic_favourite"), tag: 3)
         favouritesViewController.tabBarItem = favouritesBarItem
-        let nc2 = UINavigationController(rootViewController: favouritesViewController)
+        let nc3 = UINavigationController(rootViewController: favouritesViewController)
 
-        let settingsBarItem = UITabBarItem(title: "SETTINGS", image: UIImage(named: "ic_setting"), tag: 3)
+        let settingsBarItem = UITabBarItem(title: "SETTINGS", image: UIImage(named: "ic_setting"), tag: 4)
         settingsViewController.tabBarItem = settingsBarItem
-        let nc3 = UINavigationController(rootViewController: settingsViewController)
+        let nc4 = UINavigationController(rootViewController: settingsViewController)
 
-        self.viewControllers = [nc1, nc2, nc3]
+        self.viewControllers = [nc1, nc2, nc3, nc4]
     }
 
     override func viewWillAppear(_ animated: Bool) {

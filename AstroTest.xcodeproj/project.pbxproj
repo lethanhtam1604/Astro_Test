@@ -46,6 +46,15 @@
 		E64AB2561F74BCC600608435 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64AB2551F74BCC600608435 /* SettingsViewController.swift */; };
 		E64AB25A1F74C32400608435 /* ChannelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E64AB2581F74C32400608435 /* ChannelTableViewCell.xib */; };
 		E64AB25C1F74C33500608435 /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64AB25B1F74C33500608435 /* ChannelTableViewCell.swift */; };
+		E64D03641F77E36B00571B57 /* SortChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64D03631F77E36B00571B57 /* SortChannelViewController.swift */; };
+		E650D9951F788F9800694499 /* SortTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E650D9931F788F9800694499 /* SortTableViewCell.xib */; };
+		E650D9971F788FAA00694499 /* SortTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650D9961F788FAA00694499 /* SortTableViewCell.swift */; };
+		E650D99A1F78954800694499 /* SortHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650D9981F78954800694499 /* SortHeaderTableViewCell.swift */; };
+		E650D99D1F78955500694499 /* SortHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E650D99C1F78955500694499 /* SortHeaderTableViewCell.xib */; };
+		E650D99F1F78977E00694499 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650D99E1F78977E00694499 /* UserDefaultManager.swift */; };
+		E650D9A41F789E0400694499 /* TVGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650D9A31F789E0400694499 /* TVGuideViewController.swift */; };
+		E650D9A61F789E1700694499 /* TVGuide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E650D9A51F789E1700694499 /* TVGuide.storyboard */; };
+		E6A4B06A1F776E8000E4A827 /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A4B0691F776E8000E4A827 /* NSAttributedString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,7 +99,16 @@
 		E64AB2551F74BCC600608435 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E64AB2581F74C32400608435 /* ChannelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChannelTableViewCell.xib; sourceTree = "<group>"; };
 		E64AB25B1F74C33500608435 /* ChannelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelTableViewCell.swift; sourceTree = "<group>"; };
+		E64D03631F77E36B00571B57 /* SortChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortChannelViewController.swift; sourceTree = "<group>"; };
+		E650D9931F788F9800694499 /* SortTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SortTableViewCell.xib; sourceTree = "<group>"; };
+		E650D9961F788FAA00694499 /* SortTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortTableViewCell.swift; sourceTree = "<group>"; };
+		E650D9981F78954800694499 /* SortHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		E650D99C1F78955500694499 /* SortHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SortHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		E650D99E1F78977E00694499 /* UserDefaultManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		E650D9A31F789E0400694499 /* TVGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVGuideViewController.swift; sourceTree = "<group>"; };
+		E650D9A51F789E1700694499 /* TVGuide.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TVGuide.storyboard; sourceTree = "<group>"; };
 		E693A5E11F73849C00A3CBC3 /* AstroTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstroTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6A4B0691F776E8000E4A827 /* NSAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedString.swift; sourceTree = "<group>"; };
 		EE7553AD3115AFFC76BF2DC6 /* Pods-AstroTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstroTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AstroTest/Pods-AstroTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,12 +144,13 @@
 		E625E17E1F7755470027CB52 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				E625E1841F7755470027CB52 /* SplashScreen.storyboard */,
+				E625E1821F7755470027CB52 /* Main.storyboard */,
 				E625E17F1F7755470027CB52 /* Channels.storyboard */,
+				E650D9A51F789E1700694499 /* TVGuide.storyboard */,
 				E625E1801F7755470027CB52 /* Favourites.storyboard */,
 				E625E1811F7755470027CB52 /* LaunchScreen.storyboard */,
-				E625E1821F7755470027CB52 /* Main.storyboard */,
 				E625E1831F7755470027CB52 /* Settings.storyboard */,
-				E625E1841F7755470027CB52 /* SplashScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -143,9 +162,11 @@
 				E64885EA1F739E640044B3C2 /* SplashScreenViewController.swift */,
 				E64885E81F739E640044B3C2 /* MainViewController.swift */,
 				E64AB2421F74AE7400608435 /* ChannelsViewController.swift */,
+				E650D9A31F789E0400694499 /* TVGuideViewController.swift */,
 				E64AB2441F74AE8600608435 /* FavouritesViewController.swift */,
 				E64AB2551F74BCC600608435 /* SettingsViewController.swift */,
 				E64885E91F739E640044B3C2 /* PopupDialogViewController.swift */,
+				E64D03631F77E36B00571B57 /* SortChannelViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -155,6 +176,8 @@
 			children = (
 				E64AB25B1F74C33500608435 /* ChannelTableViewCell.swift */,
 				E64885EC1F739E640044B3C2 /* BasePopupView.swift */,
+				E650D9961F788FAA00694499 /* SortTableViewCell.swift */,
+				E650D9981F78954800694499 /* SortHeaderTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,6 +187,8 @@
 			children = (
 				E64885F01F739E640044B3C2 /* BasePopupView.xib */,
 				E64AB2581F74C32400608435 /* ChannelTableViewCell.xib */,
+				E650D9931F788F9800694499 /* SortTableViewCell.xib */,
+				E650D99C1F78955500694499 /* SortHeaderTableViewCell.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -184,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				E64886091F739E890044B3C2 /* DatabaseHelper.swift */,
+				E650D99E1F78977E00694499 /* UserDefaultManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -214,6 +240,7 @@
 				E64886191F739E910044B3C2 /* UIColor.swift */,
 				E648861A1F739E910044B3C2 /* UIView.swift */,
 				E643BFAC1F7665B200867754 /* UIImageView.swift */,
+				E6A4B0691F776E8000E4A827 /* NSAttributedString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -348,16 +375,19 @@
 			files = (
 				E64886041F739E820044B3C2 /* MyAvatar.jpg in Resources */,
 				E64AB23C1F74A79A00608435 /* OpenSans-semibold.ttf in Resources */,
+				E650D9951F788F9800694499 /* SortTableViewCell.xib in Resources */,
 				E64AB23D1F74A79A00608435 /* OpenSans.ttf in Resources */,
 				E625E1881F7755470027CB52 /* Main.storyboard in Resources */,
 				E64885F91F739E640044B3C2 /* BasePopupView.xib in Resources */,
 				E625E1861F7755470027CB52 /* Favourites.storyboard in Resources */,
 				E64886271F73A0200044B3C2 /* Assets.xcassets in Resources */,
 				E625E1851F7755470027CB52 /* Channels.storyboard in Resources */,
+				E650D9A61F789E1700694499 /* TVGuide.storyboard in Resources */,
 				E64AB25A1F74C32400608435 /* ChannelTableViewCell.xib in Resources */,
 				E64AB23A1F74A79A00608435 /* OpenSans-bold.ttf in Resources */,
 				E625E1871F7755470027CB52 /* LaunchScreen.storyboard in Resources */,
 				E625E1891F7755470027CB52 /* Settings.storyboard in Resources */,
+				E650D99D1F78955500694499 /* SortHeaderTableViewCell.xib in Resources */,
 				E64AB23B1F74A79A00608435 /* OpenSans-light.ttf in Resources */,
 				E625E18A1F7755470027CB52 /* SplashScreen.storyboard in Resources */,
 			);
@@ -431,6 +461,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E650D99F1F78977E00694499 /* UserDefaultManager.swift in Sources */,
 				E64885F61F739E640044B3C2 /* BasePopupView.swift in Sources */,
 				E64886161F739E890044B3C2 /* APIHelper.swift in Sources */,
 				E64886201F739E910044B3C2 /* Global.swift in Sources */,
@@ -441,18 +472,23 @@
 				E648861E1F739E910044B3C2 /* UIColor.swift in Sources */,
 				E64885F21F739E640044B3C2 /* BaseViewController.swift in Sources */,
 				E64886151F739E890044B3C2 /* Response.swift in Sources */,
+				E650D9A41F789E0400694499 /* TVGuideViewController.swift in Sources */,
 				E64886171F739E890044B3C2 /* Router.swift in Sources */,
 				E63B29551F74E0E500FE5547 /* APIRequest.swift in Sources */,
 				E64AB2431F74AE7400608435 /* ChannelsViewController.swift in Sources */,
 				E64AB2451F74AE8600608435 /* FavouritesViewController.swift in Sources */,
 				E63B29531F74DF4100FE5547 /* Channel.swift in Sources */,
 				E64885F51F739E640044B3C2 /* SplashScreenViewController.swift in Sources */,
+				E650D9971F788FAA00694499 /* SortTableViewCell.swift in Sources */,
 				E643BFAD1F7665B200867754 /* UIImageView.swift in Sources */,
 				E643BFAB1F76572F00867754 /* ChannelLogo.swift in Sources */,
 				E64AB25C1F74C33500608435 /* ChannelTableViewCell.swift in Sources */,
+				E650D99A1F78954800694499 /* SortHeaderTableViewCell.swift in Sources */,
 				E64886211F739E910044B3C2 /* Utils.swift in Sources */,
+				E64D03641F77E36B00571B57 /* SortChannelViewController.swift in Sources */,
 				E64885F31F739E640044B3C2 /* MainViewController.swift in Sources */,
 				E64886251F73A0120044B3C2 /* AppDelegate.swift in Sources */,
+				E6A4B06A1F776E8000E4A827 /* NSAttributedString.swift in Sources */,
 				E648861F1F739E910044B3C2 /* UIView.swift in Sources */,
 				E64885F41F739E640044B3C2 /* PopupDialogViewController.swift in Sources */,
 			);
