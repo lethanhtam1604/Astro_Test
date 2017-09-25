@@ -8,20 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		CBF208A2CBF70C9199AE294D /* Pods_AstroTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A9E4CC4766954D4C1A0D1B /* Pods_AstroTest.framework */; };
-		E625E1851F7755470027CB52 /* Channels.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E625E17F1F7755470027CB52 /* Channels.storyboard */; };
-		E625E1861F7755470027CB52 /* Favourites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E625E1801F7755470027CB52 /* Favourites.storyboard */; };
-		E625E1871F7755470027CB52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E625E1811F7755470027CB52 /* LaunchScreen.storyboard */; };
-		E625E1881F7755470027CB52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E625E1821F7755470027CB52 /* Main.storyboard */; };
-		E625E1891F7755470027CB52 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E625E1831F7755470027CB52 /* Settings.storyboard */; };
-		E625E18A1F7755470027CB52 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E625E1841F7755470027CB52 /* SplashScreen.storyboard */; };
 		E63B29531F74DF4100FE5547 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63B29521F74DF4100FE5547 /* Channel.swift */; };
 		E63B29551F74E0E500FE5547 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63B29541F74E0E500FE5547 /* APIRequest.swift */; };
 		E63E59F51F794474008B115A /* FavouritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E59F41F794474008B115A /* FavouritePresenter.swift */; };
+		E63E59F91F795879008B115A /* ChannelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E59F81F795879008B115A /* ChannelDetailViewController.swift */; };
+		E63E59FB1F796580008B115A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E59FA1F796580008B115A /* ProfileViewController.swift */; };
+		E63E59FE1F796738008B115A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E59FD1F796738008B115A /* BaseViewController.swift */; };
+		E63E5A031F796884008B115A /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63E5A051F796884008B115A /* SplashScreen.storyboard */; };
+		E63E5A081F7968EB008B115A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63E5A0A1F7968EB008B115A /* Main.storyboard */; };
+		E63E5A0B1F7968F1008B115A /* Channels.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63E5A0D1F7968F1008B115A /* Channels.storyboard */; };
+		E63E5A0E1F7968F4008B115A /* TVGuide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63E5A101F7968F4008B115A /* TVGuide.storyboard */; };
+		E63E5A111F7968F7008B115A /* Favourites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63E5A131F7968F7008B115A /* Favourites.storyboard */; };
+		E63E5A141F7968FB008B115A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63E5A161F7968FB008B115A /* LaunchScreen.storyboard */; };
+		E63E5A171F7968FF008B115A /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63E5A191F7968FF008B115A /* Settings.storyboard */; };
+		E63E5A1A1F796902008B115A /* ChannelDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63E5A1C1F796902008B115A /* ChannelDetail.storyboard */; };
+		E63E5A2B1F796926008B115A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E63E5A2D1F796926008B115A /* Localizable.strings */; };
 		E641BC271F78D938003D3547 /* FavouriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641BC261F78D938003D3547 /* FavouriteManager.swift */; };
 		E643BFA91F76206000867754 /* ChannelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643BFA81F76206000867754 /* ChannelPresenter.swift */; };
 		E643BFAB1F76572F00867754 /* ChannelLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643BFAA1F76572F00867754 /* ChannelLogo.swift */; };
 		E643BFAD1F7665B200867754 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643BFAC1F7665B200867754 /* UIImageView.swift */; };
-		E64885F21F739E640044B3C2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64885E71F739E640044B3C2 /* BaseViewController.swift */; };
 		E64885F31F739E640044B3C2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64885E81F739E640044B3C2 /* MainViewController.swift */; };
 		E64885F41F739E640044B3C2 /* PopupDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64885E91F739E640044B3C2 /* PopupDialogViewController.swift */; };
 		E64885F51F739E640044B3C2 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64885EA1F739E640044B3C2 /* SplashScreenViewController.swift */; };
@@ -55,7 +60,6 @@
 		E650D99D1F78955500694499 /* SortHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E650D99C1F78955500694499 /* SortHeaderTableViewCell.xib */; };
 		E650D99F1F78977E00694499 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650D99E1F78977E00694499 /* UserDefaultManager.swift */; };
 		E650D9A41F789E0400694499 /* TVGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650D9A31F789E0400694499 /* TVGuideViewController.swift */; };
-		E650D9A61F789E1700694499 /* TVGuide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E650D9A51F789E1700694499 /* TVGuide.storyboard */; };
 		E6A4B06A1F776E8000E4A827 /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A4B0691F776E8000E4A827 /* NSAttributedString.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,20 +67,52 @@
 		5A0DD37709B1320F9BA8EC4F /* Pods-AstroTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstroTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-AstroTest/Pods-AstroTest.release.xcconfig"; sourceTree = "<group>"; };
 		A3A9E4CC4766954D4C1A0D1B /* Pods_AstroTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AstroTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E625E17C1F7754890027CB52 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E625E17F1F7755470027CB52 /* Channels.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Channels.storyboard; sourceTree = "<group>"; };
-		E625E1801F7755470027CB52 /* Favourites.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Favourites.storyboard; sourceTree = "<group>"; };
-		E625E1811F7755470027CB52 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E625E1821F7755470027CB52 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		E625E1831F7755470027CB52 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		E625E1841F7755470027CB52 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		E63B29521F74DF4100FE5547 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		E63B29541F74E0E500FE5547 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		E63E59F41F794474008B115A /* FavouritePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritePresenter.swift; sourceTree = "<group>"; };
+		E63E59F81F795879008B115A /* ChannelDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelDetailViewController.swift; sourceTree = "<group>"; };
+		E63E59FA1F796580008B115A /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E63E59FD1F796738008B115A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E63E5A041F796884008B115A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SplashScreen.storyboard; sourceTree = "<group>"; };
+		E63E5A071F7968BB008B115A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SplashScreen.strings; sourceTree = "<group>"; };
+		E63E5A091F7968EB008B115A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E63E5A0C1F7968F1008B115A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Channels.storyboard; sourceTree = "<group>"; };
+		E63E5A0F1F7968F4008B115A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TVGuide.storyboard; sourceTree = "<group>"; };
+		E63E5A121F7968F7008B115A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Favourites.storyboard; sourceTree = "<group>"; };
+		E63E5A151F7968FB008B115A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E63E5A181F7968FF008B115A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
+		E63E5A1B1F796902008B115A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ChannelDetail.storyboard; sourceTree = "<group>"; };
+		E63E5A1E1F79690B008B115A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		E63E5A201F79690F008B115A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Channels.strings; sourceTree = "<group>"; };
+		E63E5A221F796911008B115A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TVGuide.strings; sourceTree = "<group>"; };
+		E63E5A241F796914008B115A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Favourites.strings; sourceTree = "<group>"; };
+		E63E5A261F796918008B115A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		E63E5A281F79691B008B115A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
+		E63E5A2A1F79691F008B115A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ChannelDetail.strings; sourceTree = "<group>"; };
+		E63E5A2C1F796926008B115A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E63E5A2E1F796927008B115A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E63E5A2F1F796973008B115A /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/SplashScreen.strings; sourceTree = "<group>"; };
+		E63E5A301F796973008B115A /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
+		E63E5A311F796973008B115A /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Channels.strings; sourceTree = "<group>"; };
+		E63E5A321F796973008B115A /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/TVGuide.strings; sourceTree = "<group>"; };
+		E63E5A331F796973008B115A /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Favourites.strings; sourceTree = "<group>"; };
+		E63E5A341F796973008B115A /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		E63E5A351F796973008B115A /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Settings.strings; sourceTree = "<group>"; };
+		E63E5A361F796973008B115A /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/ChannelDetail.strings; sourceTree = "<group>"; };
+		E63E5A371F796973008B115A /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E63E5A381F79697E008B115A /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/SplashScreen.strings; sourceTree = "<group>"; };
+		E63E5A391F79697E008B115A /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/Main.strings; sourceTree = "<group>"; };
+		E63E5A3A1F79697E008B115A /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/Channels.strings; sourceTree = "<group>"; };
+		E63E5A3B1F79697E008B115A /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/TVGuide.strings; sourceTree = "<group>"; };
+		E63E5A3C1F79697E008B115A /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/Favourites.strings; sourceTree = "<group>"; };
+		E63E5A3D1F79697E008B115A /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		E63E5A3E1F79697E008B115A /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/Settings.strings; sourceTree = "<group>"; };
+		E63E5A3F1F79697E008B115A /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/ChannelDetail.strings; sourceTree = "<group>"; };
+		E63E5A401F79697E008B115A /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E641BC261F78D938003D3547 /* FavouriteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteManager.swift; sourceTree = "<group>"; };
 		E643BFA81F76206000867754 /* ChannelPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelPresenter.swift; sourceTree = "<group>"; };
 		E643BFAA1F76572F00867754 /* ChannelLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelLogo.swift; sourceTree = "<group>"; };
 		E643BFAC1F7665B200867754 /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
-		E64885E71F739E640044B3C2 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E64885E81F739E640044B3C2 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E64885E91F739E640044B3C2 /* PopupDialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogViewController.swift; sourceTree = "<group>"; };
 		E64885EA1F739E640044B3C2 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
@@ -110,7 +146,6 @@
 		E650D99C1F78955500694499 /* SortHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SortHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		E650D99E1F78977E00694499 /* UserDefaultManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		E650D9A31F789E0400694499 /* TVGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVGuideViewController.swift; sourceTree = "<group>"; };
-		E650D9A51F789E1700694499 /* TVGuide.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TVGuide.storyboard; sourceTree = "<group>"; };
 		E693A5E11F73849C00A3CBC3 /* AstroTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstroTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6A4B0691F776E8000E4A827 /* NSAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedString.swift; sourceTree = "<group>"; };
 		EE7553AD3115AFFC76BF2DC6 /* Pods-AstroTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstroTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AstroTest/Pods-AstroTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,21 +183,30 @@
 		E625E17E1F7755470027CB52 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				E625E1841F7755470027CB52 /* SplashScreen.storyboard */,
-				E625E1821F7755470027CB52 /* Main.storyboard */,
-				E625E17F1F7755470027CB52 /* Channels.storyboard */,
-				E650D9A51F789E1700694499 /* TVGuide.storyboard */,
-				E625E1801F7755470027CB52 /* Favourites.storyboard */,
-				E625E1811F7755470027CB52 /* LaunchScreen.storyboard */,
-				E625E1831F7755470027CB52 /* Settings.storyboard */,
+				E63E5A051F796884008B115A /* SplashScreen.storyboard */,
+				E63E5A0A1F7968EB008B115A /* Main.storyboard */,
+				E63E5A0D1F7968F1008B115A /* Channels.storyboard */,
+				E63E5A101F7968F4008B115A /* TVGuide.storyboard */,
+				E63E5A131F7968F7008B115A /* Favourites.storyboard */,
+				E63E5A161F7968FB008B115A /* LaunchScreen.storyboard */,
+				E63E5A191F7968FF008B115A /* Settings.storyboard */,
+				E63E5A1C1F796902008B115A /* ChannelDetail.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E63E59FC1F79672A008B115A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E63E59FD1F796738008B115A /* BaseViewController.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		E64885E61F739E640044B3C2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E64885E71F739E640044B3C2 /* BaseViewController.swift */,
+				E63E59FC1F79672A008B115A /* Utils */,
 				E64885EA1F739E640044B3C2 /* SplashScreenViewController.swift */,
 				E64885E81F739E640044B3C2 /* MainViewController.swift */,
 				E64AB2421F74AE7400608435 /* ChannelsViewController.swift */,
@@ -171,6 +215,8 @@
 				E64AB2551F74BCC600608435 /* SettingsViewController.swift */,
 				E64885E91F739E640044B3C2 /* PopupDialogViewController.swift */,
 				E64D03631F77E36B00571B57 /* SortChannelViewController.swift */,
+				E63E59F81F795879008B115A /* ChannelDetailViewController.swift */,
+				E63E59FA1F796580008B115A /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -205,6 +251,7 @@
 				E64886261F73A0200044B3C2 /* Assets.xcassets */,
 				E64886011F739E820044B3C2 /* MyAvatar.jpg */,
 				E625E17C1F7754890027CB52 /* Info.plist */,
+				E63E5A2D1F796926008B115A /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -363,6 +410,8 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
+				ms,
 			);
 			mainGroup = E693A5D81F73849C00A3CBC3;
 			productRefGroup = E693A5E21F73849C00A3CBC3 /* Products */;
@@ -383,19 +432,21 @@
 				E64AB23C1F74A79A00608435 /* OpenSans-semibold.ttf in Resources */,
 				E650D9951F788F9800694499 /* SortTableViewCell.xib in Resources */,
 				E64AB23D1F74A79A00608435 /* OpenSans.ttf in Resources */,
-				E625E1881F7755470027CB52 /* Main.storyboard in Resources */,
+				E63E5A081F7968EB008B115A /* Main.storyboard in Resources */,
 				E64885F91F739E640044B3C2 /* BasePopupView.xib in Resources */,
-				E625E1861F7755470027CB52 /* Favourites.storyboard in Resources */,
+				E63E5A111F7968F7008B115A /* Favourites.storyboard in Resources */,
 				E64886271F73A0200044B3C2 /* Assets.xcassets in Resources */,
-				E625E1851F7755470027CB52 /* Channels.storyboard in Resources */,
-				E650D9A61F789E1700694499 /* TVGuide.storyboard in Resources */,
+				E63E5A0B1F7968F1008B115A /* Channels.storyboard in Resources */,
+				E63E5A0E1F7968F4008B115A /* TVGuide.storyboard in Resources */,
 				E64AB25A1F74C32400608435 /* ChannelTableViewCell.xib in Resources */,
 				E64AB23A1F74A79A00608435 /* OpenSans-bold.ttf in Resources */,
-				E625E1871F7755470027CB52 /* LaunchScreen.storyboard in Resources */,
-				E625E1891F7755470027CB52 /* Settings.storyboard in Resources */,
+				E63E5A141F7968FB008B115A /* LaunchScreen.storyboard in Resources */,
+				E63E5A171F7968FF008B115A /* Settings.storyboard in Resources */,
 				E650D99D1F78955500694499 /* SortHeaderTableViewCell.xib in Resources */,
+				E63E5A1A1F796902008B115A /* ChannelDetail.storyboard in Resources */,
+				E63E5A2B1F796926008B115A /* Localizable.strings in Resources */,
 				E64AB23B1F74A79A00608435 /* OpenSans-light.ttf in Resources */,
-				E625E18A1F7755470027CB52 /* SplashScreen.storyboard in Resources */,
+				E63E5A031F796884008B115A /* SplashScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,13 +523,14 @@
 				E64885F61F739E640044B3C2 /* BasePopupView.swift in Sources */,
 				E64886161F739E890044B3C2 /* APIHelper.swift in Sources */,
 				E64886201F739E910044B3C2 /* Global.swift in Sources */,
+				E63E59FE1F796738008B115A /* BaseViewController.swift in Sources */,
 				E641BC271F78D938003D3547 /* FavouriteManager.swift in Sources */,
 				E64AB2561F74BCC600608435 /* SettingsViewController.swift in Sources */,
 				E648862A1F73A02A0044B3C2 /* AstroTest.xcdatamodeld in Sources */,
+				E63E59F91F795879008B115A /* ChannelDetailViewController.swift in Sources */,
 				E64886121F739E890044B3C2 /* DatabaseHelper.swift in Sources */,
 				E643BFA91F76206000867754 /* ChannelPresenter.swift in Sources */,
 				E648861E1F739E910044B3C2 /* UIColor.swift in Sources */,
-				E64885F21F739E640044B3C2 /* BaseViewController.swift in Sources */,
 				E64886151F739E890044B3C2 /* Response.swift in Sources */,
 				E650D9A41F789E0400694499 /* TVGuideViewController.swift in Sources */,
 				E64886171F739E890044B3C2 /* Router.swift in Sources */,
@@ -490,6 +542,7 @@
 				E650D9971F788FAA00694499 /* SortTableViewCell.swift in Sources */,
 				E643BFAD1F7665B200867754 /* UIImageView.swift in Sources */,
 				E643BFAB1F76572F00867754 /* ChannelLogo.swift in Sources */,
+				E63E59FB1F796580008B115A /* ProfileViewController.swift in Sources */,
 				E64AB25C1F74C33500608435 /* ChannelTableViewCell.swift in Sources */,
 				E650D99A1F78954800694499 /* SortHeaderTableViewCell.swift in Sources */,
 				E64886211F739E910044B3C2 /* Utils.swift in Sources */,
@@ -504,11 +557,114 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		E63E5A051F796884008B115A /* SplashScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E63E5A041F796884008B115A /* Base */,
+				E63E5A071F7968BB008B115A /* en */,
+				E63E5A2F1F796973008B115A /* vi */,
+				E63E5A381F79697E008B115A /* ms */,
+			);
+			name = SplashScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E63E5A0A1F7968EB008B115A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E63E5A091F7968EB008B115A /* Base */,
+				E63E5A1E1F79690B008B115A /* en */,
+				E63E5A301F796973008B115A /* vi */,
+				E63E5A391F79697E008B115A /* ms */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E63E5A0D1F7968F1008B115A /* Channels.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E63E5A0C1F7968F1008B115A /* Base */,
+				E63E5A201F79690F008B115A /* en */,
+				E63E5A311F796973008B115A /* vi */,
+				E63E5A3A1F79697E008B115A /* ms */,
+			);
+			name = Channels.storyboard;
+			sourceTree = "<group>";
+		};
+		E63E5A101F7968F4008B115A /* TVGuide.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E63E5A0F1F7968F4008B115A /* Base */,
+				E63E5A221F796911008B115A /* en */,
+				E63E5A321F796973008B115A /* vi */,
+				E63E5A3B1F79697E008B115A /* ms */,
+			);
+			name = TVGuide.storyboard;
+			sourceTree = "<group>";
+		};
+		E63E5A131F7968F7008B115A /* Favourites.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E63E5A121F7968F7008B115A /* Base */,
+				E63E5A241F796914008B115A /* en */,
+				E63E5A331F796973008B115A /* vi */,
+				E63E5A3C1F79697E008B115A /* ms */,
+			);
+			name = Favourites.storyboard;
+			sourceTree = "<group>";
+		};
+		E63E5A161F7968FB008B115A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E63E5A151F7968FB008B115A /* Base */,
+				E63E5A261F796918008B115A /* en */,
+				E63E5A341F796973008B115A /* vi */,
+				E63E5A3D1F79697E008B115A /* ms */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E63E5A191F7968FF008B115A /* Settings.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E63E5A181F7968FF008B115A /* Base */,
+				E63E5A281F79691B008B115A /* en */,
+				E63E5A351F796973008B115A /* vi */,
+				E63E5A3E1F79697E008B115A /* ms */,
+			);
+			name = Settings.storyboard;
+			sourceTree = "<group>";
+		};
+		E63E5A1C1F796902008B115A /* ChannelDetail.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E63E5A1B1F796902008B115A /* Base */,
+				E63E5A2A1F79691F008B115A /* en */,
+				E63E5A361F796973008B115A /* vi */,
+				E63E5A3F1F79697E008B115A /* ms */,
+			);
+			name = ChannelDetail.storyboard;
+			sourceTree = "<group>";
+		};
+		E63E5A2D1F796926008B115A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E63E5A2C1F796926008B115A /* Base */,
+				E63E5A2E1F796927008B115A /* en */,
+				E63E5A371F796973008B115A /* vi */,
+				E63E5A401F79697E008B115A /* ms */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		E693A5F41F73849C00A3CBC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -560,6 +716,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

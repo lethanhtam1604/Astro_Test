@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  AstroTest
+
+  Created by Thanh-Tam Le on 9/25/17.
+  Copyright © 2017 Tam. All rights reserved.
+*/
+
+"channels" = "Channels";
+"tv_guide" = "TV Guide";
+"favourites" = "Favourites";
+"settings" = "Settings";
+"search_for_channels" = "Search for channels";
+"search_for_favourites" = "Search for favourites";
+"ok" = "Ok";
+"cancel" = "Cancel";
+"logout" = "Logout";
+"logout_message" = "Are you sure want to logout?";
+"sort" = "Sort";
+"apply" = "Apply";
+"save" = "Save";
+"profile" = "Profile";

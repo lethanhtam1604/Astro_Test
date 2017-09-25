@@ -49,19 +49,19 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate, UINavi
             settingsViewController = viewController
         }
 
-        let channelsBarItem = UITabBarItem(title: "CHANNELS", image: UIImage(named: "ic_channel"), tag: 1)
+        let channelsBarItem = UITabBarItem(title: NSLocalizedString("channels", comment: "").uppercased(), image: UIImage(named: "ic_channel"), tag: 1)
         channelsViewController.tabBarItem = channelsBarItem
         let nc1 = UINavigationController(rootViewController: channelsViewController)
 
-        let tvGuideBarItem = UITabBarItem(title: "TV GUIDE", image: UIImage(named: "ic_tv"), tag: 2)
+        let tvGuideBarItem = UITabBarItem(title: NSLocalizedString("tv_guide", comment: "").uppercased(), image: UIImage(named: "ic_tv"), tag: 2)
         tvGuideViewController.tabBarItem = tvGuideBarItem
         let nc2 = UINavigationController(rootViewController: tvGuideViewController)
 
-        let favouritesBarItem = UITabBarItem(title: "FAVOURITES", image: UIImage(named: "ic_favourite"), tag: 3)
+        let favouritesBarItem = UITabBarItem(title: NSLocalizedString("favourites", comment: "").uppercased(), image: UIImage(named: "ic_favourite"), tag: 3)
         favouritesViewController.tabBarItem = favouritesBarItem
         let nc3 = UINavigationController(rootViewController: favouritesViewController)
 
-        let settingsBarItem = UITabBarItem(title: "SETTINGS", image: UIImage(named: "ic_setting"), tag: 4)
+        let settingsBarItem = UITabBarItem(title: NSLocalizedString("settings", comment: "").uppercased(), image: UIImage(named: "ic_setting"), tag: 4)
         settingsViewController.tabBarItem = settingsBarItem
         let nc4 = UINavigationController(rootViewController: settingsViewController)
 

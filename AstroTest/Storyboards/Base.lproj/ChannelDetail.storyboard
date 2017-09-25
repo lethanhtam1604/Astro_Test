@@ -9,23 +9,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Settings View Controller-->
-        <scene sceneID="3Z2-y1-jvC">
+        <!--Channel Detail View Controller-->
+        <scene sceneID="izK-ps-hak">
             <objects>
-                <viewController storyboardIdentifier="SettingsViewController" id="q8F-4y-DHr" customClass="SettingsViewController" customModule="AstroTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChannelDetailViewController" id="1yf-v9-5jY" customClass="ChannelDetailViewController" customModule="AstroTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gdi-xO-j8y"/>
-                        <viewControllerLayoutGuide type="bottom" id="CHr-pT-9Xm"/>
+                        <viewControllerLayoutGuide type="top" id="HZP-Xp-UKq"/>
+                        <viewControllerLayoutGuide type="bottom" id="1Rs-4Q-P3D"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0bK-UR-UbS">
+                    <view key="view" contentMode="scaleToFill" id="7Y1-7W-cLC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u0D-DN-rQJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0LT-Kv-r6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="160"/>
+            <point key="canvasLocation" x="106" y="163"/>
         </scene>
     </scenes>
 </document>

@@ -24,14 +24,14 @@ class SortChannelViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "SORT"
+        title = NSLocalizedString("sort", comment: "").uppercased()
 
-        let cancelBarButton = UIBarButtonItem(title: "CANCEL", style: .done, target: self, action: #selector(actionTapToCancelBtn))
-        cancelBarButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "OpenSans-semibold", size: 15) ?? UIFont.systemFontSize], for: UIControlState.normal)
+        let cancelBarButton = UIBarButtonItem(title: NSLocalizedString("cancel", comment: "").uppercased(), style: .done, target: self, action: #selector(actionTapToCancelBtn))
+        cancelBarButton.setTitleTextAttributes([NSForegroundColorAttributeName: Global.colorMain, NSFontAttributeName: UIFont(name: "OpenSans-semibold", size: 15) ?? UIFont.systemFontSize], for: UIControlState.normal)
         self.navigationItem.leftBarButtonItem = cancelBarButton
 
-        let applyBarButton = UIBarButtonItem(title: "APPLY", style: .done, target: self, action: #selector(actionTapToApplyBtn))
-        applyBarButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "OpenSans-semibold", size: 15) ?? UIFont.systemFontSize], for: UIControlState.normal)
+        let applyBarButton = UIBarButtonItem(title: NSLocalizedString("apply", comment: "").uppercased(), style: .done, target: self, action: #selector(actionTapToApplyBtn))
+        applyBarButton.setTitleTextAttributes([NSForegroundColorAttributeName: Global.colorMain, NSFontAttributeName: UIFont(name: "OpenSans-semibold", size: 15) ?? UIFont.systemFontSize], for: UIControlState.normal)
         self.navigationItem.rightBarButtonItem = applyBarButton
 
         //setup tableView

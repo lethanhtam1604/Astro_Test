@@ -27,7 +27,7 @@ class ChannelsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "CHANNELS"
+        title = NSLocalizedString("channels", comment: "").uppercased()
 
         //setting UI
         let filterBarButton = UIBarButtonItem(image: UIImage(named: "ic_filter"), style: .done, target: self, action: #selector(actionTapToSortBtn))
@@ -35,7 +35,7 @@ class ChannelsViewController: BaseViewController {
 
         //custom search bar
         searchBar.searchBarStyle = UISearchBarStyle.prominent
-        searchBar.placeholder = "Search for channels"
+        searchBar.placeholder = NSLocalizedString("search_for_channels", comment: "")
         searchBar.isTranslucent = true
         searchBar.backgroundImage = UIImage()
         searchBar.delegate = self
@@ -170,6 +170,12 @@ extension ChannelsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
+        let storyboard = UIStoryboard(name: "ChannelDetail", bundle: nil)
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "ChannelDetailViewController") as? ChannelDetailViewController {
+            viewController.channel = channels[indexPath.row]
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
 }
 

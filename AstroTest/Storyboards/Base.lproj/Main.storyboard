@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jCM-Ja-WNv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZUF-kp-UF2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <!--Main View Controller-->
         <scene sceneID="a4R-mk-8VY">
             <objects>
-                <viewController id="YPZ-nr-xBd" customClass="MainViewController" customModule="RTHTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YPZ-nr-xBd" customClass="MainViewController" customModule="AstroTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="maK-G5-cne"/>
                         <viewControllerLayoutGuide type="bottom" id="G7N-Lm-Ai4"/>
@@ -26,12 +26,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y1a-FE-zi8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2466.4000000000001" y="45.42728635682159"/>
+            <point key="canvasLocation" x="3052.5" y="44.5"/>
         </scene>
         <!--Popup Dialog View Controller-->
         <scene sceneID="HZ5-B0-LKY">
             <objects>
-                <viewController storyboardIdentifier="PopupDialogViewController" id="NdC-99-Iqb" customClass="PopupDialogViewController" customModule="RTHTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PopupDialogViewController" id="NdC-99-Iqb" customClass="PopupDialogViewController" customModule="AstroTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i7O-L6-EMF"/>
                         <viewControllerLayoutGuide type="bottom" id="YQc-ih-Z1K"/>
@@ -40,8 +40,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xk3-9I-2wr" customClass="BasePopupView" customModule="RTHTest" customModuleProvider="target">
-                                <rect key="frame" x="57" y="218" width="260" height="230"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xk3-9I-2wr" customClass="BasePopupView" customModule="AstroTest" customModuleProvider="target">
+                                <rect key="frame" x="57.5" y="218.5" width="260" height="230"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="260" id="DGP-RC-Y7v"/>
@@ -61,25 +61,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Na-VV-1LK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4748" y="64.31784107946028"/>
+            <point key="canvasLocation" x="5334.5" y="63.5"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="3wH-Ot-eZh">
+        <scene sceneID="dNU-Gg-g5Q">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jCM-Ja-WNv" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZUF-kp-UF2" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="SWt-kB-cwt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pNI-Q0-gbg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="YPZ-nr-xBd" kind="relationship" relationship="rootViewController" id="oLt-UX-91g"/>
+                        <segue destination="YPZ-nr-xBd" kind="relationship" relationship="rootViewController" id="vi7-LS-k7q"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XuS-JY-WLo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O1X-x2-9uS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1527.2" y="45.42728635682159"/>
+            <point key="canvasLocation" x="2465.5" y="44.5"/>
         </scene>
     </scenes>
 </document>

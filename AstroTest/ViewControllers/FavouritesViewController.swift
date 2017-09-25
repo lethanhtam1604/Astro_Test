@@ -26,11 +26,11 @@ class FavouritesViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "FAVOURITES"
+        title = NSLocalizedString("favourites", comment: "").uppercased()
 
         //custom search bar
         searchBar.searchBarStyle = UISearchBarStyle.prominent
-        searchBar.placeholder = "Search for favourites"
+        searchBar.placeholder = NSLocalizedString("search_for_favourites", comment: "")
         searchBar.isTranslucent = true
         searchBar.backgroundImage = UIImage()
         searchBar.delegate = self
@@ -136,6 +136,12 @@ extension FavouritesViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
+        let storyboard = UIStoryboard(name: "ChannelDetail", bundle: nil)
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "ChannelDetailViewController") as? ChannelDetailViewController {
+            viewController.channel = channels[indexPath.row]
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

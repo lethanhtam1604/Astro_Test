@@ -13,7 +13,7 @@ class TVGuideViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "TV GUIDE"
+        title = NSLocalizedString("tv_guide", comment: "").uppercased()
     }
 
     override func didReceiveMemoryWarning() {
