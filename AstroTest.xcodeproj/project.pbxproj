@@ -23,6 +23,16 @@
 		E63E5A171F7968FF008B115A /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63E5A191F7968FF008B115A /* Settings.storyboard */; };
 		E63E5A1A1F796902008B115A /* ChannelDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63E5A1C1F796902008B115A /* ChannelDetail.storyboard */; };
 		E63E5A2B1F796926008B115A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E63E5A2D1F796926008B115A /* Localizable.strings */; };
+		E63E5A421F7A0608008B115A /* CustomCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E5A411F7A0608008B115A /* CustomCollectionViewLayout.swift */; };
+		E63E5A461F7A0B50008B115A /* TVGuideCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63E5A441F7A0B50008B115A /* TVGuideCollectionViewCell.xib */; };
+		E63E5A4A1F7A0C37008B115A /* ChannelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63E5A481F7A0C37008B115A /* ChannelCollectionViewCell.xib */; };
+		E63E5A4C1F7A0C46008B115A /* ChannelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E5A4B1F7A0C46008B115A /* ChannelCollectionViewCell.swift */; };
+		E63E5A4E1F7A0C4D008B115A /* TVGuideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E5A4D1F7A0C4D008B115A /* TVGuideCollectionViewCell.swift */; };
+		E63E5A521F7A4D26008B115A /* TimeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63E5A501F7A4D26008B115A /* TimeCollectionViewCell.xib */; };
+		E63E5A541F7A4D3C008B115A /* TimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E5A531F7A4D3C008B115A /* TimeCollectionViewCell.swift */; };
+		E63E5A581F7A54EA008B115A /* OnNowCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63E5A561F7A54EA008B115A /* OnNowCollectionViewCell.xib */; };
+		E63E5A5A1F7A5543008B115A /* OnNowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E5A591F7A5543008B115A /* OnNowCollectionViewCell.swift */; };
+		E63E5A5C1F7A5E8F008B115A /* TVGuidePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E5A5B1F7A5E8F008B115A /* TVGuidePresenter.swift */; };
 		E641BC271F78D938003D3547 /* FavouriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641BC261F78D938003D3547 /* FavouriteManager.swift */; };
 		E643BFA91F76206000867754 /* ChannelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643BFA81F76206000867754 /* ChannelPresenter.swift */; };
 		E643BFAB1F76572F00867754 /* ChannelLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643BFAA1F76572F00867754 /* ChannelLogo.swift */; };
@@ -54,6 +64,14 @@
 		E64AB25A1F74C32400608435 /* ChannelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E64AB2581F74C32400608435 /* ChannelTableViewCell.xib */; };
 		E64AB25C1F74C33500608435 /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64AB25B1F74C33500608435 /* ChannelTableViewCell.swift */; };
 		E64D03641F77E36B00571B57 /* SortChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64D03631F77E36B00571B57 /* SortChannelViewController.swift */; };
+		E64F50461F7A9B31009DC625 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F50451F7A9B31009DC625 /* TimeManager.swift */; };
+		E64F50481F7A9B55009DC625 /* ChannelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F50471F7A9B55009DC625 /* ChannelManager.swift */; };
+		E64F504A1F7AB0DB009DC625 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F50491F7AB0DB009DC625 /* Time.swift */; };
+		E64F504C1F7B49DE009DC625 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F504B1F7B49DE009DC625 /* Event.swift */; };
+		E64F504E1F7B7D22009DC625 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F504D1F7B7D22009DC625 /* String.swift */; };
+		E64F50501F7B7D2B009DC625 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F504F1F7B7D2B009DC625 /* Dictionary.swift */; };
+		E64F50521F7BF226009DC625 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F50511F7BF226009DC625 /* DateUtil.swift */; };
+		E64F50541F7C273D009DC625 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F50531F7C273D009DC625 /* EventDetailViewController.swift */; };
 		E650D9951F788F9800694499 /* SortTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E650D9931F788F9800694499 /* SortTableViewCell.xib */; };
 		E650D9971F788FAA00694499 /* SortTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650D9961F788FAA00694499 /* SortTableViewCell.swift */; };
 		E650D99A1F78954800694499 /* SortHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650D9981F78954800694499 /* SortHeaderTableViewCell.swift */; };
@@ -109,6 +127,16 @@
 		E63E5A3E1F79697E008B115A /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/Settings.strings; sourceTree = "<group>"; };
 		E63E5A3F1F79697E008B115A /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/ChannelDetail.strings; sourceTree = "<group>"; };
 		E63E5A401F79697E008B115A /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E63E5A411F7A0608008B115A /* CustomCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewLayout.swift; sourceTree = "<group>"; };
+		E63E5A441F7A0B50008B115A /* TVGuideCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TVGuideCollectionViewCell.xib; sourceTree = "<group>"; };
+		E63E5A481F7A0C37008B115A /* ChannelCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChannelCollectionViewCell.xib; sourceTree = "<group>"; };
+		E63E5A4B1F7A0C46008B115A /* ChannelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCollectionViewCell.swift; sourceTree = "<group>"; };
+		E63E5A4D1F7A0C4D008B115A /* TVGuideCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVGuideCollectionViewCell.swift; sourceTree = "<group>"; };
+		E63E5A501F7A4D26008B115A /* TimeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeCollectionViewCell.xib; sourceTree = "<group>"; };
+		E63E5A531F7A4D3C008B115A /* TimeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeCollectionViewCell.swift; sourceTree = "<group>"; };
+		E63E5A561F7A54EA008B115A /* OnNowCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnNowCollectionViewCell.xib; sourceTree = "<group>"; };
+		E63E5A591F7A5543008B115A /* OnNowCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnNowCollectionViewCell.swift; sourceTree = "<group>"; };
+		E63E5A5B1F7A5E8F008B115A /* TVGuidePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVGuidePresenter.swift; sourceTree = "<group>"; };
 		E641BC261F78D938003D3547 /* FavouriteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteManager.swift; sourceTree = "<group>"; };
 		E643BFA81F76206000867754 /* ChannelPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelPresenter.swift; sourceTree = "<group>"; };
 		E643BFAA1F76572F00867754 /* ChannelLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelLogo.swift; sourceTree = "<group>"; };
@@ -140,6 +168,14 @@
 		E64AB2581F74C32400608435 /* ChannelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChannelTableViewCell.xib; sourceTree = "<group>"; };
 		E64AB25B1F74C33500608435 /* ChannelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelTableViewCell.swift; sourceTree = "<group>"; };
 		E64D03631F77E36B00571B57 /* SortChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortChannelViewController.swift; sourceTree = "<group>"; };
+		E64F50451F7A9B31009DC625 /* TimeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
+		E64F50471F7A9B55009DC625 /* ChannelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelManager.swift; sourceTree = "<group>"; };
+		E64F50491F7AB0DB009DC625 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		E64F504B1F7B49DE009DC625 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		E64F504D1F7B7D22009DC625 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		E64F504F1F7B7D2B009DC625 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		E64F50511F7BF226009DC625 /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		E64F50531F7C273D009DC625 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		E650D9931F788F9800694499 /* SortTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SortTableViewCell.xib; sourceTree = "<group>"; };
 		E650D9961F788FAA00694499 /* SortTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortTableViewCell.swift; sourceTree = "<group>"; };
 		E650D9981F78954800694499 /* SortHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortHeaderTableViewCell.swift; sourceTree = "<group>"; };
@@ -217,6 +253,7 @@
 				E64D03631F77E36B00571B57 /* SortChannelViewController.swift */,
 				E63E59F81F795879008B115A /* ChannelDetailViewController.swift */,
 				E63E59FA1F796580008B115A /* ProfileViewController.swift */,
+				E64F50531F7C273D009DC625 /* EventDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -224,10 +261,15 @@
 		E64885EB1F739E640044B3C2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E64AB25B1F74C33500608435 /* ChannelTableViewCell.swift */,
 				E64885EC1F739E640044B3C2 /* BasePopupView.swift */,
+				E64AB25B1F74C33500608435 /* ChannelTableViewCell.swift */,
 				E650D9961F788FAA00694499 /* SortTableViewCell.swift */,
 				E650D9981F78954800694499 /* SortHeaderTableViewCell.swift */,
+				E63E5A411F7A0608008B115A /* CustomCollectionViewLayout.swift */,
+				E63E5A4D1F7A0C4D008B115A /* TVGuideCollectionViewCell.swift */,
+				E63E5A4B1F7A0C46008B115A /* ChannelCollectionViewCell.swift */,
+				E63E5A531F7A4D3C008B115A /* TimeCollectionViewCell.swift */,
+				E63E5A591F7A5543008B115A /* OnNowCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -239,6 +281,10 @@
 				E64AB2581F74C32400608435 /* ChannelTableViewCell.xib */,
 				E650D9931F788F9800694499 /* SortTableViewCell.xib */,
 				E650D99C1F78955500694499 /* SortHeaderTableViewCell.xib */,
+				E63E5A441F7A0B50008B115A /* TVGuideCollectionViewCell.xib */,
+				E63E5A481F7A0C37008B115A /* ChannelCollectionViewCell.xib */,
+				E63E5A501F7A4D26008B115A /* TimeCollectionViewCell.xib */,
+				E63E5A561F7A54EA008B115A /* OnNowCollectionViewCell.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -262,6 +308,8 @@
 				E64886091F739E890044B3C2 /* DatabaseHelper.swift */,
 				E650D99E1F78977E00694499 /* UserDefaultManager.swift */,
 				E641BC261F78D938003D3547 /* FavouriteManager.swift */,
+				E64F50471F7A9B55009DC625 /* ChannelManager.swift */,
+				E64F50451F7A9B31009DC625 /* TimeManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -272,6 +320,8 @@
 				E648860D1F739E890044B3C2 /* Response.swift */,
 				E63B29521F74DF4100FE5547 /* Channel.swift */,
 				E643BFAA1F76572F00867754 /* ChannelLogo.swift */,
+				E64F50491F7AB0DB009DC625 /* Time.swift */,
+				E64F504B1F7B49DE009DC625 /* Event.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -293,6 +343,8 @@
 				E648861A1F739E910044B3C2 /* UIView.swift */,
 				E643BFAC1F7665B200867754 /* UIImageView.swift */,
 				E6A4B0691F776E8000E4A827 /* NSAttributedString.swift */,
+				E64F504D1F7B7D22009DC625 /* String.swift */,
+				E64F504F1F7B7D2B009DC625 /* Dictionary.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -303,6 +355,7 @@
 				E64886241F73A0120044B3C2 /* AppDelegate.swift */,
 				E648861C1F739E910044B3C2 /* Global.swift */,
 				E648861D1F739E910044B3C2 /* Utils.swift */,
+				E64F50511F7BF226009DC625 /* DateUtil.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -311,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				E643BFA81F76206000867754 /* ChannelPresenter.swift */,
+				E63E5A5B1F7A5E8F008B115A /* TVGuidePresenter.swift */,
 				E63E59F41F794474008B115A /* FavouritePresenter.swift */,
 			);
 			path = Presenter;
@@ -433,11 +487,14 @@
 				E650D9951F788F9800694499 /* SortTableViewCell.xib in Resources */,
 				E64AB23D1F74A79A00608435 /* OpenSans.ttf in Resources */,
 				E63E5A081F7968EB008B115A /* Main.storyboard in Resources */,
+				E63E5A581F7A54EA008B115A /* OnNowCollectionViewCell.xib in Resources */,
+				E63E5A461F7A0B50008B115A /* TVGuideCollectionViewCell.xib in Resources */,
 				E64885F91F739E640044B3C2 /* BasePopupView.xib in Resources */,
 				E63E5A111F7968F7008B115A /* Favourites.storyboard in Resources */,
 				E64886271F73A0200044B3C2 /* Assets.xcassets in Resources */,
 				E63E5A0B1F7968F1008B115A /* Channels.storyboard in Resources */,
 				E63E5A0E1F7968F4008B115A /* TVGuide.storyboard in Resources */,
+				E63E5A521F7A4D26008B115A /* TimeCollectionViewCell.xib in Resources */,
 				E64AB25A1F74C32400608435 /* ChannelTableViewCell.xib in Resources */,
 				E64AB23A1F74A79A00608435 /* OpenSans-bold.ttf in Resources */,
 				E63E5A141F7968FB008B115A /* LaunchScreen.storyboard in Resources */,
@@ -447,6 +504,7 @@
 				E63E5A2B1F796926008B115A /* Localizable.strings in Resources */,
 				E64AB23B1F74A79A00608435 /* OpenSans-light.ttf in Resources */,
 				E63E5A031F796884008B115A /* SplashScreen.storyboard in Resources */,
+				E63E5A4A1F7A0C37008B115A /* ChannelCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,32 +578,46 @@
 			files = (
 				E63E59F51F794474008B115A /* FavouritePresenter.swift in Sources */,
 				E650D99F1F78977E00694499 /* UserDefaultManager.swift in Sources */,
+				E63E5A4E1F7A0C4D008B115A /* TVGuideCollectionViewCell.swift in Sources */,
 				E64885F61F739E640044B3C2 /* BasePopupView.swift in Sources */,
 				E64886161F739E890044B3C2 /* APIHelper.swift in Sources */,
+				E64F50481F7A9B55009DC625 /* ChannelManager.swift in Sources */,
 				E64886201F739E910044B3C2 /* Global.swift in Sources */,
+				E64F50461F7A9B31009DC625 /* TimeManager.swift in Sources */,
 				E63E59FE1F796738008B115A /* BaseViewController.swift in Sources */,
 				E641BC271F78D938003D3547 /* FavouriteManager.swift in Sources */,
 				E64AB2561F74BCC600608435 /* SettingsViewController.swift in Sources */,
 				E648862A1F73A02A0044B3C2 /* AstroTest.xcdatamodeld in Sources */,
+				E64F50521F7BF226009DC625 /* DateUtil.swift in Sources */,
+				E64F504E1F7B7D22009DC625 /* String.swift in Sources */,
+				E64F504C1F7B49DE009DC625 /* Event.swift in Sources */,
 				E63E59F91F795879008B115A /* ChannelDetailViewController.swift in Sources */,
 				E64886121F739E890044B3C2 /* DatabaseHelper.swift in Sources */,
 				E643BFA91F76206000867754 /* ChannelPresenter.swift in Sources */,
+				E63E5A4C1F7A0C46008B115A /* ChannelCollectionViewCell.swift in Sources */,
 				E648861E1F739E910044B3C2 /* UIColor.swift in Sources */,
+				E63E5A421F7A0608008B115A /* CustomCollectionViewLayout.swift in Sources */,
 				E64886151F739E890044B3C2 /* Response.swift in Sources */,
 				E650D9A41F789E0400694499 /* TVGuideViewController.swift in Sources */,
+				E63E5A541F7A4D3C008B115A /* TimeCollectionViewCell.swift in Sources */,
 				E64886171F739E890044B3C2 /* Router.swift in Sources */,
+				E64F504A1F7AB0DB009DC625 /* Time.swift in Sources */,
 				E63B29551F74E0E500FE5547 /* APIRequest.swift in Sources */,
 				E64AB2431F74AE7400608435 /* ChannelsViewController.swift in Sources */,
 				E64AB2451F74AE8600608435 /* FavouritesViewController.swift in Sources */,
+				E63E5A5A1F7A5543008B115A /* OnNowCollectionViewCell.swift in Sources */,
+				E64F50541F7C273D009DC625 /* EventDetailViewController.swift in Sources */,
 				E63B29531F74DF4100FE5547 /* Channel.swift in Sources */,
 				E64885F51F739E640044B3C2 /* SplashScreenViewController.swift in Sources */,
 				E650D9971F788FAA00694499 /* SortTableViewCell.swift in Sources */,
 				E643BFAD1F7665B200867754 /* UIImageView.swift in Sources */,
 				E643BFAB1F76572F00867754 /* ChannelLogo.swift in Sources */,
 				E63E59FB1F796580008B115A /* ProfileViewController.swift in Sources */,
+				E64F50501F7B7D2B009DC625 /* Dictionary.swift in Sources */,
 				E64AB25C1F74C33500608435 /* ChannelTableViewCell.swift in Sources */,
 				E650D99A1F78954800694499 /* SortHeaderTableViewCell.swift in Sources */,
 				E64886211F739E910044B3C2 /* Utils.swift in Sources */,
+				E63E5A5C1F7A5E8F008B115A /* TVGuidePresenter.swift in Sources */,
 				E64D03641F77E36B00571B57 /* SortChannelViewController.swift in Sources */,
 				E64885F31F739E640044B3C2 /* MainViewController.swift in Sources */,
 				E64886251F73A0120044B3C2 /* AppDelegate.swift in Sources */,

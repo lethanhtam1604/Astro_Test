@@ -97,6 +97,14 @@ class ChannelsViewController: BaseViewController {
             present(nav, animated: true, completion: nil)
         }
     }
+
+    func getTableView() -> UITableView? {
+        if tableView != nil {
+            return tableView
+        }
+        
+        return nil
+    }
 }
 
 extension ChannelsViewController: ChannelView {

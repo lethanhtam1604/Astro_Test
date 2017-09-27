@@ -13,7 +13,7 @@ class Channel: NSObject {
     var channelId: Int64?
     var channelStbNumber: String?
     var channelTitle: String?
-
+    var channelDescription: String?
     var channelLogos: [ChannelLogo] = []
     var currentChannelLogo: ChannelLogo?
 
@@ -25,6 +25,7 @@ class Channel: NSObject {
         channelId = channel["channelId"] as? Int64
         channelStbNumber = channel["channelStbNumber"] as? String
         channelTitle = channel["channelTitle"] as? String
+        channelDescription = channel["channelDescription"] as? String
 
         if let channelLogos = channel["channelExtRef"] as? [[String: Any]] {
             for channelLogo in channelLogos {

@@ -18,7 +18,6 @@ class ChannelTableViewCell: UITableViewCell {
     static let kCellId = "ChannelTableViewCell"
 
     fileprivate var favouriteTintedImg: UIImage!
-
     fileprivate var currentChannel: Channel!
 
     override func awakeFromNib() {
@@ -48,6 +47,8 @@ class ChannelTableViewCell: UITableViewCell {
 
         if let path = channel.currentChannelLogo?.value {
             logoImgView.loadImagesUsingUrlString(urlString: path)
+        } else {
+            logoImgView.image = nil
         }
 
         if let channelId = channel.channelId {

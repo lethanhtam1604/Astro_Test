@@ -89,4 +89,28 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate, UINavi
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+
+    fileprivate var previousTag = 1
+
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+
+        if item.tag == 1 && previousTag == 1 {
+            if let tableView = channelsViewController.getTableView() {
+                let indexPath = NSIndexPath(row: 0, section: 0)
+                tableView.scrollToRow(at: indexPath as IndexPath, at: .top, animated: true)
+            }
+        } else if item.tag == 2 && previousTag == 2 {
+            if let collectionView = tvGuideViewController.getCollectionView() {
+                let indexPath = NSIndexPath(row: 0, section: 1)
+                collectionView.scrollToItem(at: indexPath as IndexPath, at: .top, animated: true)
+            }
+        } else if item.tag == 3 && previousTag == 3 {
+            if let tableView = favouritesViewController.getTableView() {
+                let indexPath = NSIndexPath(row: 0, section: 0)
+                tableView.scrollToRow(at: indexPath as IndexPath, at: .top, animated: true)
+            }
+        }
+
+        previousTag = item.tag
+    }
 }

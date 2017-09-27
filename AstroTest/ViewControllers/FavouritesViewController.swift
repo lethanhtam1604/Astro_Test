@@ -77,6 +77,14 @@ class FavouritesViewController: BaseViewController {
     func handleRefresh(_ refreshControl: UIRefreshControl) {
         favouritePresenter.getChannels()
     }
+
+    func getTableView() -> UITableView? {
+        if tableView != nil {
+            return tableView
+        }
+
+        return nil
+    }
 }
 
 extension FavouritesViewController: FavouriteView {

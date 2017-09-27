@@ -3,6 +3,7 @@ included:
 excluded:
   - Pods
 disabled_rules:
+  - trailing_whitespace
   - void_return
   - cyclomatic_complexity
   - type_body_length
