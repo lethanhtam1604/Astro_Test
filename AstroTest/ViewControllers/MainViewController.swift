@@ -101,7 +101,7 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate, UINavi
             }
         } else if item.tag == 2 && previousTag == 2 {
             if let collectionView = tvGuideViewController.getCollectionView() {
-                let indexPath = NSIndexPath(row: 0, section: 1)
+                let indexPath = NSIndexPath(row: 0, section: 0)
                 collectionView.scrollToItem(at: indexPath as IndexPath, at: .top, animated: true)
             }
         } else if item.tag == 3 && previousTag == 3 {

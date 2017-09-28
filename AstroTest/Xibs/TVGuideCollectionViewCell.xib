@@ -33,7 +33,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:30 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFr-Qy-HRv">
-                        <rect key="frame" x="10" y="26.5" width="199" height="19.5"/>
+                        <rect key="frame" x="10" y="75" width="199" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="b5t-4k-qv3"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -43,10 +46,10 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="7bH-aq-QlV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="0BG-2N-b3Y"/>
-                <constraint firstItem="QFr-Qy-HRv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="0vG-3b-Phi"/>
-                <constraint firstAttribute="trailing" secondItem="QFr-Qy-HRv" secondAttribute="trailing" constant="10" id="6V1-oN-5f2"/>
                 <constraint firstAttribute="trailing" secondItem="7bH-aq-QlV" secondAttribute="trailing" constant="10" id="N0S-bE-MdQ"/>
-                <constraint firstItem="QFr-Qy-HRv" firstAttribute="top" secondItem="7bH-aq-QlV" secondAttribute="bottom" id="oTg-8U-rwt"/>
+                <constraint firstAttribute="trailing" secondItem="QFr-Qy-HRv" secondAttribute="trailing" constant="10" id="O3O-9M-foF"/>
+                <constraint firstItem="QFr-Qy-HRv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="rwY-lu-DUI"/>
+                <constraint firstAttribute="bottom" secondItem="QFr-Qy-HRv" secondAttribute="bottom" constant="5" id="w1b-6B-iM8"/>
                 <constraint firstItem="7bH-aq-QlV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="wfc-Lm-JHC"/>
             </constraints>
             <size key="customSize" width="219" height="100"/>

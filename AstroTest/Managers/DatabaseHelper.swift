@@ -63,6 +63,7 @@ class DatabaseHelper: NSObject {
                 transc.setValue(channel.currentChannelLogo?.value, forKey: "channelLogo")
                 transc.setValue(channel.channelStbNumber, forKey: "channelStbNumber")
                 transc.setValue(channel.channelTitle, forKey: "channelTitle")
+                transc.setValue(channel.channelDescription, forKey: "channelDescription")
 
                 //save the object
                 try context.save()
@@ -98,6 +99,7 @@ class DatabaseHelper: NSObject {
                 channel.currentChannelLogo = channelLogo
                 channel.channelStbNumber = trans.value(forKey: "channelStbNumber") as? String
                 channel.channelTitle = trans.value(forKey: "channelTitle") as? String
+                channel.channelDescription = trans.value(forKey: "channelDescription") as? String
                 channels.append(channel)
             }
             return channels

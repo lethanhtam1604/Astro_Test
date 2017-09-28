@@ -7,15 +7,14 @@
 //
 
 import UIKit
-import SVProgressHUD
 
 class TVGuideViewController: BaseViewController {
 
+    @IBOutlet fileprivate weak var onNowButton: UIButton!
     @IBOutlet fileprivate weak var collectionView: UICollectionView!
+    @IBOutlet fileprivate weak var indicator: UIActivityIndicatorView!
 
     fileprivate var customCollectionViewLayout: CustomCollectionViewLayout!
-    var index = 1
-
     fileprivate let tvGuidePresenter = TVGuidePresenter()
     fileprivate var channels: [Channel] = []
     fileprivate var isLoadData = false
@@ -26,10 +25,15 @@ class TVGuideViewController: BaseViewController {
 
     fileprivate lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(handleRefresh), for: UIControlEvents.valueChanged)
+        refreshControl.addTarget(self, action: #selector(handleToRefresh), for: UIControlEvents.valueChanged)
         refreshControl.tintColor = Global.colorMain
         return refreshControl
     }()
+
+    fileprivate var timer: Timer!
+    fileprivate let currentLineView = UIView()
+    fileprivate let lineView = UIView()
+    fileprivate let onNowBtn = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,9 +53,35 @@ class TVGuideViewController: BaseViewController {
         collectionView.addSubview(refreshControl)
         collectionView.contentOffset = CGPoint(x: 0, y: -refreshControl.frame.size.height)
 
+        //setting UI
+        indicator.transform = CGAffineTransform(scaleX: 2, y: 2)
+
+        onNowButton.layer.cornerRadius = 5
+        
+        currentLineView.backgroundColor = UIColor.clear
+        currentLineView.frame = CGRect(x: self.customCollectionViewLayout.getXPosForCurrentTime(), y: 0, width: 50, height: self.customCollectionViewLayout.getHeight())
+
+        lineView.frame = CGRect(x: currentLineView.frame.width / 2, y: currentLineView.frame.origin.y, width: 1, height: currentLineView.frame.height)
+        lineView.backgroundColor = Global.colorMain
+
+        onNowBtn.frame = CGRect(x: 0, y: 0, width: currentLineView.frame.width, height: 20)
+        onNowBtn.backgroundColor = UIColor.clear
+        onNowBtn.layer.borderColor = Global.colorMain.cgColor
+        onNowBtn.layer.borderWidth = 1
+        onNowBtn.titleLabel?.font = UIFont(name: "OpenSans", size: 12) ?? UIFont.systemFont(ofSize: 12)
+        onNowBtn.setTitle(NSLocalizedString("on_now", comment: ""), for: .normal)
+        onNowBtn.setTitleColor(Global.colorMain, for: .normal)
+
+        currentLineView.addSubview(lineView)
+        currentLineView.addSubview(onNowBtn)
+        collectionView.addSubview(currentLineView)
+
         //load data
         tvGuidePresenter.attachView(view: self)
         tvGuidePresenter.getChannels()
+
+        //Timer
+        timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(updateXPosForCurrentTime), userInfo: self, repeats: true)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -70,7 +100,16 @@ class TVGuideViewController: BaseViewController {
 
     }
 
-    func handleRefresh(_ refreshControl: UIRefreshControl) {
+    @IBAction func actionTapToOnNowBtn(_ sender: Any) {
+        updateCollectionViewForCurrentTime()
+    }
+
+    func updateCollectionViewForCurrentTime() {
+        let indexPath = NSIndexPath(row: customCollectionViewLayout.getRowForCurrentTime(), section: 0)
+        collectionView.scrollToItem(at: indexPath as IndexPath, at: .centeredHorizontally, animated: true)
+    }
+
+    func handleToRefresh(_ refreshControl: UIRefreshControl) {
         dicEvents.removeAll()
         tvGuidePresenter.getChannels()
     }
@@ -82,21 +121,22 @@ class TVGuideViewController: BaseViewController {
 
         return nil
     }
+
+    func updateXPosForCurrentTime() {
+        self.currentLineView.frame = CGRect(x: self.customCollectionViewLayout.getXPosForCurrentTime() - 25, y: 60 - 20, width: 50, height: self.customCollectionViewLayout.getHeight())
+        self.lineView.frame = CGRect(x: self.currentLineView.frame.width / 2, y: self.currentLineView.frame.origin.y - 20, width: 1, height: self.currentLineView.frame.height)
+    }
 }
 
 extension TVGuideViewController: TVGuideView {
 
     func startLoading() {
-        SVProgressHUD.show()
-    }
-
-    func startLoadingWithCustomAnimation() {
-        SVProgressHUD.show()
+        indicator.startAnimating()
     }
 
     func finishLoading() {
         isLoadMore = false
-        SVProgressHUD.dismiss()
+        indicator.stopAnimating()
         refreshControl.endRefreshing()
     }
 
@@ -127,6 +167,9 @@ extension TVGuideViewController: TVGuideView {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
             self.customCollectionViewLayout.dataSourceDidUpdate = true
+
+            self.updateCollectionViewForCurrentTime()
+            self.updateXPosForCurrentTime()
         }
     }
 

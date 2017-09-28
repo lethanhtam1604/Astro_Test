@@ -9,14 +9,11 @@
 import UIKit
 
 class OnNowCollectionViewCell: UICollectionViewCell {
-    
-    @IBOutlet fileprivate weak var onNowBtn: UIButton!
 
     static let kCellId = "OnNowCollectionViewCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
-        onNowBtn.layer.cornerRadius = 5
+        
     }
 }

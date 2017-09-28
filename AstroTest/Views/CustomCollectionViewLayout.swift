@@ -11,7 +11,9 @@ import UIKit
 class CustomCollectionViewLayout: UICollectionViewLayout {
 
     fileprivate var CELL_HEIGHT = 100.0
+    fileprivate var CELL_MAXHEIGHT = 100.0
     fileprivate var CELL_WIDTH = 150.0
+    fileprivate var CELL_MAXWIDTH = 200.0
     fileprivate let STATUS_BAR = UIApplication.shared.statusBarFrame.height
     fileprivate var cellAttrsDictionary: [IndexPath: UICollectionViewLayoutAttributes] = [:]
     fileprivate var contentSize = CGSize.zero
@@ -123,8 +125,8 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
                                 let ealierMinutes = DateUtil.minutes(earlierTime, laterTime, format: DateUtil.DateFormat.yyyymmddhhmmssS)
                                 let laterMinutes = DateUtil.minutesFromDate(durationTime, format: DateUtil.DateFormat.yyyymmddhhmmssS)
 
-                                CELL_WIDTH = Double((laterMinutes * 200) / 60)
-                                xPos = Double(120 + 100 + (ealierMinutes * 200) / 60)
+                                CELL_WIDTH = Double((Double(laterMinutes) * CELL_MAXWIDTH) / 60)
+                                xPos = Double(120 + 100 + (Double(ealierMinutes) * CELL_MAXWIDTH) / 60)
                             }
 
                             yPos = 60 + Double(section - 1) * CELL_HEIGHT
@@ -148,8 +150,8 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
             }
         }
 
-        let contentWidth = Double(collectionView?.numberOfItems(inSection: 0) ?? 0) * 200
-        let contentHeight = Double(collectionView?.numberOfSections ?? 0) * CELL_HEIGHT
+        let contentWidth = Double(collectionView?.numberOfItems(inSection: 0) ?? 0) * CELL_MAXWIDTH
+        let contentHeight = Double(collectionView?.numberOfSections ?? 0) * CELL_MAXHEIGHT
         self.contentSize = CGSize(width: contentWidth, height: contentHeight)
     }
 
@@ -171,5 +173,31 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
 
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
+    }
+}
+
+extension CustomCollectionViewLayout {
+
+    func getHeight() -> CGFloat {
+        return contentSize.height
+    }
+
+    func getXPosForCurrentTime() -> CGFloat {
+
+        let earlierTime = DateUtil.string(format: DateUtil.DateFormat.yyyymmdd) + " 00:00:00.0"
+        let laterTime = DateUtil.string()
+
+        let minutes = DateUtil.minutes(earlierTime, laterTime, format: DateUtil.DateFormat.yyyymmddhhmmssS)
+
+        return CGFloat(120 + 100 + (minutes * Int(CELL_MAXWIDTH)) / 60)
+    }
+
+    func getRowForCurrentTime() -> Int {
+
+        let earlierTime = DateUtil.string(format: DateUtil.DateFormat.yyyymmdd) + " 00:00:00.0"
+        let laterTime = DateUtil.string()
+
+        let minutes = DateUtil.minutes(earlierTime, laterTime, format: DateUtil.DateFormat.yyyymmddhhmmssS)
+        return minutes / 60 + 1
     }
 }

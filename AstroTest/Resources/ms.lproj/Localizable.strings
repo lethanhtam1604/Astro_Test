@@ -16,3 +16,8 @@
 "cancel" = "Cancel";
 "logout" = "Logout";
 "logout_message" = "Are you sure want to logout?";
+"sort" = "Sort";
+"apply" = "Apply";
+"save" = "Save";
+"profile" = "Profile";
+"on_now" = "On Now";

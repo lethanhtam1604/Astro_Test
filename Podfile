@@ -4,8 +4,6 @@ use_frameworks!
 
 def shared_pods
     pod 'SwiftLint'
-    pod 'SVProgressHUD'
-    pod 'Alamofire'
 end
 
 target 'AstroTest' do

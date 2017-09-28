@@ -10,7 +10,6 @@ import UIKit
 
 protocol TVGuideView: class {
     func startLoading()
-    func startLoadingWithCustomAnimation()
     func finishLoading()
     func setChannels(channels: [Channel]?)
     func setSearchChannels(channels: [Channel]?)
