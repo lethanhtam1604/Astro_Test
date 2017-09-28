@@ -18,6 +18,7 @@ class FavouritesViewController: BaseViewController {
     }()
     @IBOutlet fileprivate weak var searchBar: UISearchBar!
     @IBOutlet fileprivate weak var tableView: UITableView!
+    @IBOutlet fileprivate weak var indicator: UIActivityIndicatorView!
 
     fileprivate let favouritePresenter = FavouritePresenter()
     fileprivate var channels: [Channel] = []
@@ -28,6 +29,10 @@ class FavouritesViewController: BaseViewController {
 
         title = NSLocalizedString("favourites", comment: "").uppercased()
 
+        //setting UI
+        let sortBarButton = UIBarButtonItem(image: UIImage(named: "ic_sort"), style: .done, target: self, action: #selector(actionTapToSortBtn))
+        navigationItem.leftBarButtonItem = sortBarButton
+        
         //custom search bar
         searchBar.searchBarStyle = UISearchBarStyle.prominent
         searchBar.placeholder = NSLocalizedString("search_for_favourites", comment: "")
@@ -60,6 +65,7 @@ class FavouritesViewController: BaseViewController {
         tableView.contentOffset = CGPoint(x: 0, y: -refreshControl.frame.size.height)
 
         favouritePresenter.attachView(view: self)
+        indicator.startAnimating()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -74,26 +80,37 @@ class FavouritesViewController: BaseViewController {
 
     }
 
+    func actionTapToSortBtn() {
+        let storyboard = UIStoryboard(name: "Channels", bundle: nil)
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "SortChannelViewController") as? SortChannelViewController {
+            viewController.delegate = self
+            let nav = UINavigationController(rootViewController: viewController)
+            present(nav, animated: true, completion: nil)
+        }
+    }
+
     func handleRefresh(_ refreshControl: UIRefreshControl) {
         favouritePresenter.getChannels()
     }
+}
 
-    func getTableView() -> UITableView? {
-        if tableView != nil {
-            return tableView
-        }
+extension FavouritesViewController: SortChannelDelegate {
 
-        return nil
+    func applySort() {
+        Global.isUpdateChannelsBySorting = false
+        Global.isUpdateTVGuideBySorting = false
+        favouritePresenter.sortChannels(channels)
     }
 }
 
 extension FavouritesViewController: FavouriteView {
 
     func startLoading() {
-        refreshControl.beginRefreshing()
+
     }
 
     func finishLoading() {
+        indicator.stopAnimating()
         refreshControl.endRefreshing()
     }
 
@@ -182,5 +199,16 @@ extension FavouritesViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         searchBar.text = ""
         favouritePresenter.searchChannels(searchBar.text, allChannels)
+    }
+}
+
+extension FavouritesViewController {
+
+    func getTableView() -> UITableView? {
+        if tableView != nil {
+            return tableView
+        }
+
+        return nil
     }
 }

@@ -12,7 +12,6 @@ protocol TVGuideView: class {
     func startLoading()
     func finishLoading()
     func setChannels(channels: [Channel]?)
-    func setSearchChannels(channels: [Channel]?)
     func setEvents(events: [Event]?)
 }
 
@@ -39,9 +38,7 @@ class TVGuidePresenter: NSObject {
         begin = 0
         count = 0
         APIHelper.getChannels { [weak self] (_, channels) in
-
             let result = channels?.sorted(by: { (s0, s1) -> Bool in
-
                 if UserDefaultManager.getInstance().getChannelStatusSort() == 0 {
                     if let number1 = s0.channelStbNumber, let number2 = s1.channelStbNumber {
                         return number1 < number2
@@ -51,12 +48,34 @@ class TVGuidePresenter: NSObject {
                         return title1 < title2
                     }
                 }
-
                 return false
             })
 
             self?.tvGuideView?.finishLoading()
             self?.tvGuideView?.setChannels(channels: result)
+        }
+    }
+
+    func sortChannels(_ channels: [Channel]) {
+        tvGuideView?.startLoading()
+
+        DispatchQueue.global().async {
+            let result = channels.sorted(by: { (s0, s1) -> Bool in
+                if UserDefaultManager.getInstance().getChannelStatusSort() == 0 {
+                    if let number1 = s0.channelStbNumber, let number2 = s1.channelStbNumber {
+                        return number1 < number2
+                    }
+                } else {
+                    if let title1 = s0.channelTitle, let title2 = s1.channelTitle {
+                        return title1 < title2
+                    }
+                }
+                return false
+            })
+
+            DispatchQueue.main.async {
+                self.tvGuideView?.setChannels(channels: result)
+            }
         }
     }
 
@@ -66,6 +85,17 @@ class TVGuidePresenter: NSObject {
         }
 
         return true
+    }
+
+    func initializeSection(_ channels: [Channel]) {
+        begin = 0
+        if count + 10 <= channels.count {
+            if count == 0 { //swiftlint:disable:this empty_count
+                count += 10
+            }
+        } else {
+            count = channels.count
+        }
     }
 
     func loadSectionMore(_ channels: [Channel]) {
@@ -91,7 +121,6 @@ class TVGuidePresenter: NSObject {
         }
 
         APIHelper.getEvents(channelIds, periodStart, periodEnd) { [weak self] (_, events) in
-
             let result = events?.sorted(by: { (s0, s1) -> Bool in
                 if let displayDateTime1 = s0.displayDateTime, let displayDateTime2 = s1.displayDateTime {
                     return displayDateTime1 < displayDateTime2

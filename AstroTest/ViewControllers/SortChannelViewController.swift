@@ -26,13 +26,14 @@ class SortChannelViewController: BaseViewController {
 
         title = NSLocalizedString("sort", comment: "").uppercased()
 
+        //setting navigation bar items
         let cancelBarButton = UIBarButtonItem(title: NSLocalizedString("cancel", comment: "").uppercased(), style: .done, target: self, action: #selector(actionTapToCancelBtn))
         cancelBarButton.setTitleTextAttributes([NSForegroundColorAttributeName: Global.colorMain, NSFontAttributeName: UIFont(name: "OpenSans-semibold", size: 15) ?? UIFont.systemFontSize], for: UIControlState.normal)
-        self.navigationItem.leftBarButtonItem = cancelBarButton
+        navigationItem.leftBarButtonItem = cancelBarButton
 
         let applyBarButton = UIBarButtonItem(title: NSLocalizedString("apply", comment: "").uppercased(), style: .done, target: self, action: #selector(actionTapToApplyBtn))
         applyBarButton.setTitleTextAttributes([NSForegroundColorAttributeName: Global.colorMain, NSFontAttributeName: UIFont(name: "OpenSans-semibold", size: 15) ?? UIFont.systemFontSize], for: UIControlState.normal)
-        self.navigationItem.rightBarButtonItem = applyBarButton
+        navigationItem.rightBarButtonItem = applyBarButton
 
         //setup tableView
         tableView.delegate = self

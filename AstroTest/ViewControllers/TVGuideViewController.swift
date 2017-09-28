@@ -17,18 +17,12 @@ class TVGuideViewController: BaseViewController {
     fileprivate var customCollectionViewLayout: CustomCollectionViewLayout!
     fileprivate let tvGuidePresenter = TVGuidePresenter()
     fileprivate var channels: [Channel] = []
-    fileprivate var isLoadData = false
     fileprivate var times: [Time] = TimeManager.getInstance().getTimes()
     fileprivate var isLoadMore = true
     fileprivate var events: [[Event]] = [[]]
     fileprivate var dicEvents: [Int: [Event]] = [:]
-
-    fileprivate lazy var refreshControl: UIRefreshControl = {
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(handleToRefresh), for: UIControlEvents.valueChanged)
-        refreshControl.tintColor = Global.colorMain
-        return refreshControl
-    }()
+    fileprivate var isLoadData = false
+    fileprivate var isRefreshChannel = true
 
     fileprivate var timer: Timer!
     fileprivate let currentLineView = UIView()
@@ -40,6 +34,14 @@ class TVGuideViewController: BaseViewController {
 
         title = NSLocalizedString("tv_guide", comment: "").uppercased()
 
+        //setting navigation bar items
+        let sortBarButton = UIBarButtonItem(image: UIImage(named: "ic_sort"), style: .done, target: self, action: #selector(actionTapToSortBtn))
+        navigationItem.leftBarButtonItem = sortBarButton
+
+        let todayBarButton = UIBarButtonItem(title: NSLocalizedString("Today", comment: ""), style: .done, target: self, action: #selector(actionTapToTodayButton))
+        todayBarButton.setTitleTextAttributes([NSForegroundColorAttributeName: Global.colorMain, NSFontAttributeName: UIFont(name: "OpenSans-semibold", size: 15) ?? UIFont.systemFontSize], for: UIControlState.normal)
+        navigationItem.rightBarButtonItem = todayBarButton
+
         //setup collectionView
         collectionView.backgroundColor = UIColor.white
         collectionView.register(UINib(nibName: OnNowCollectionViewCell.kCellId, bundle: nil), forCellWithReuseIdentifier: OnNowCollectionViewCell.kCellId)
@@ -50,21 +52,17 @@ class TVGuideViewController: BaseViewController {
         collectionView.dataSource = self
         customCollectionViewLayout = CustomCollectionViewLayout()
         collectionView.collectionViewLayout = customCollectionViewLayout
-        collectionView.addSubview(refreshControl)
-        collectionView.contentOffset = CGPoint(x: 0, y: -refreshControl.frame.size.height)
 
         //setting UI
-        indicator.transform = CGAffineTransform(scaleX: 2, y: 2)
-
         onNowButton.layer.cornerRadius = 5
-        
-        currentLineView.backgroundColor = UIColor.clear
-        currentLineView.frame = CGRect(x: self.customCollectionViewLayout.getXPosForCurrentTime(), y: 0, width: 50, height: self.customCollectionViewLayout.getHeight())
 
-        lineView.frame = CGRect(x: currentLineView.frame.width / 2, y: currentLineView.frame.origin.y, width: 1, height: currentLineView.frame.height)
+        currentLineView.backgroundColor = UIColor.clear
+        currentLineView.frame = CGRect(x: self.customCollectionViewLayout.getXPosForCurrentTime(), y: 0, width: 0, height: self.customCollectionViewLayout.getHeight())
+
+        lineView.frame = CGRect(x: currentLineView.frame.width / 2, y: currentLineView.frame.origin.y, width: 2, height: currentLineView.frame.height)
         lineView.backgroundColor = Global.colorMain
 
-        onNowBtn.frame = CGRect(x: 0, y: 0, width: currentLineView.frame.width, height: 20)
+        onNowBtn.frame = CGRect(x: 0, y: 0, width: 50, height: 20)
         onNowBtn.backgroundColor = UIColor.clear
         onNowBtn.layer.borderColor = Global.colorMain.cgColor
         onNowBtn.layer.borderWidth = 1
@@ -81,11 +79,16 @@ class TVGuideViewController: BaseViewController {
         tvGuidePresenter.getChannels()
 
         //Timer
-        timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(updateXPosForCurrentTime), userInfo: self, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(updateXPosForCurrentTime), userInfo: self, repeats: true)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        if !Global.isUpdateTVGuideBySorting {
+            Global.isUpdateTVGuideBySorting = true
+            applySort()
+        }
 
         if isLoadData {
             DispatchQueue.main.async {
@@ -100,31 +103,33 @@ class TVGuideViewController: BaseViewController {
 
     }
 
+    func actionTapToSortBtn() {
+        let storyboard = UIStoryboard(name: "Channels", bundle: nil)
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "SortChannelViewController") as? SortChannelViewController {
+            viewController.delegate = self
+            let nav = UINavigationController(rootViewController: viewController)
+            present(nav, animated: true, completion: nil)
+        }
+    }
+
     @IBAction func actionTapToOnNowBtn(_ sender: Any) {
         updateCollectionViewForCurrentTime()
     }
 
-    func updateCollectionViewForCurrentTime() {
-        let indexPath = NSIndexPath(row: customCollectionViewLayout.getRowForCurrentTime(), section: 0)
-        collectionView.scrollToItem(at: indexPath as IndexPath, at: .centeredHorizontally, animated: true)
+    func actionTapToTodayButton() {
+
     }
+}
 
-    func handleToRefresh(_ refreshControl: UIRefreshControl) {
-        dicEvents.removeAll()
-        tvGuidePresenter.getChannels()
-    }
+extension TVGuideViewController: SortChannelDelegate {
 
-    func getCollectionView() -> UICollectionView? {
-        if collectionView != nil {
-            return collectionView
-        }
-
-        return nil
-    }
-
-    func updateXPosForCurrentTime() {
-        self.currentLineView.frame = CGRect(x: self.customCollectionViewLayout.getXPosForCurrentTime() - 25, y: 60 - 20, width: 50, height: self.customCollectionViewLayout.getHeight())
-        self.lineView.frame = CGRect(x: self.currentLineView.frame.width / 2, y: self.currentLineView.frame.origin.y - 20, width: 1, height: self.currentLineView.frame.height)
+    func applySort() {
+        Global.isUpdateChannelsBySorting = false
+        onNowButton.isHidden = true
+        currentLineView.isHidden = true
+        customCollectionViewLayout.cellAttrsDictionary = [:]
+        isRefreshChannel = true
+        tvGuidePresenter.sortChannels(channels)
     }
 }
 
@@ -135,21 +140,25 @@ extension TVGuideViewController: TVGuideView {
     }
 
     func finishLoading() {
-        isLoadMore = false
-        indicator.stopAnimating()
-        refreshControl.endRefreshing()
+
     }
 
     func setChannels(channels: [Channel]?) {
         if let channelList = channels {
             self.channels = channelList
             customCollectionViewLayout.channels = self.channels
-            tvGuidePresenter.loadSectionMore(self.channels)
+            tvGuidePresenter.initializeSection(self.channels)
             tvGuidePresenter.getEvents(self.channels, DateUtil.string(format: DateUtil.DateFormat.yyyymmdd) + " 00:00", DateUtil.string(format: DateUtil.DateFormat.yyyymmdd) + " 23:00")
         }
     }
 
     func setEvents(events: [Event]?) {
+
+        if isRefreshChannel {
+            isRefreshChannel = false
+            dicEvents = [:]
+        }
+
         if let eventList = events {
             for event in eventList {
                 if let channelId = event.channelId {
@@ -166,15 +175,15 @@ extension TVGuideViewController: TVGuideView {
 
         DispatchQueue.main.async {
             self.collectionView.reloadData()
+            self.collectionView.collectionViewLayout.invalidateLayout()
             self.customCollectionViewLayout.dataSourceDidUpdate = true
-
             self.updateCollectionViewForCurrentTime()
             self.updateXPosForCurrentTime()
+            self.isLoadMore = false
+            self.currentLineView.isHidden = false
+            self.onNowButton.isHidden = false
+            self.indicator.stopAnimating()
         }
-    }
-
-    func setSearchChannels(channels: [Channel]?) {
-
     }
 }
 
@@ -249,9 +258,7 @@ extension TVGuideViewController: UICollectionViewDataSource {
 extension TVGuideViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
         if indexPath.section != 0 && indexPath.row != 0 {
-
             if indexPath.section - 1 < channels.count {
                 if let channelId = channels[indexPath.section - 1].channelId {
                     if let dic = dicEvents[Int(channelId)] {
@@ -265,5 +272,32 @@ extension TVGuideViewController: UICollectionViewDelegate {
                 }
             }
         }
+    }
+}
+
+extension TVGuideViewController {
+
+    func updateCollectionViewForCurrentTime() {
+        let indexPath = NSIndexPath(row: customCollectionViewLayout.getRowForCurrentTime(), section: 0)
+        collectionView.scrollToItem(at: indexPath as IndexPath, at: .centeredHorizontally, animated: false)
+
+        let cellSize = CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+        let contentOffset = collectionView.contentOffset
+        collectionView.scrollRectToVisible(CGRect(x: customCollectionViewLayout.getXPosForCurrentTime() - view.frame.width / 2, y: contentOffset.y, width: cellSize.width, height: cellSize.height), animated: true)
+    }
+
+    func getCollectionView() -> UICollectionView? {
+        if collectionView != nil {
+            return collectionView
+        }
+
+        return nil
+    }
+
+    func updateXPosForCurrentTime() {
+        self.currentLineView.frame = CGRect(x: self.customCollectionViewLayout.getXPosForCurrentTime() - 25, y: 60 - 20, width: 0, height: self.customCollectionViewLayout.getHeight())
+        self.lineView.frame = CGRect(x: 25, y: self.currentLineView.frame.origin.y - 20, width: 2, height: self.currentLineView.frame.height)
+
+        self.collectionView.reloadData()
     }
 }

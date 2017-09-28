@@ -32,7 +32,6 @@ class FavouritePresenter: NSObject {
         DispatchQueue.global().async {
             let channels = FavouriteManager.getInstance().getCurrentFavouriteChannels()
             let result = channels.sorted(by: { (s0, s1) -> Bool in
-
                 if UserDefaultManager.getInstance().getChannelStatusSort() == 0 {
                     if let number1 = s0.channelStbNumber, let number2 = s1.channelStbNumber {
                         return number1 < number2
@@ -42,7 +41,6 @@ class FavouritePresenter: NSObject {
                         return title1 < title2
                     }
                 }
-
                 return false
             })
 
@@ -77,6 +75,30 @@ class FavouritePresenter: NSObject {
 
             DispatchQueue.main.async {
                 self.favouriteView?.setSearchChannels(channels: result)
+            }
+        }
+    }
+
+    func sortChannels(_ channels: [Channel]) {
+        favouriteView?.startLoading()
+
+        DispatchQueue.global().async {
+            let result = channels.sorted(by: { (s0, s1) -> Bool in
+                if UserDefaultManager.getInstance().getChannelStatusSort() == 0 {
+                    if let number1 = s0.channelStbNumber, let number2 = s1.channelStbNumber {
+                        return number1 < number2
+                    }
+                } else {
+                    if let title1 = s0.channelTitle, let title2 = s1.channelTitle {
+                        return title1 < title2
+                    }
+                }
+                return false
+            })
+
+            DispatchQueue.main.async {
+                self.favouriteView?.setChannels(channels: result)
+                self.favouriteView?.finishLoading()
             }
         }
     }

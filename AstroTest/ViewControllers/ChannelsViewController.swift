@@ -18,7 +18,8 @@ class ChannelsViewController: BaseViewController {
     }()
     @IBOutlet fileprivate weak var searchBar: UISearchBar!
     @IBOutlet fileprivate weak var tableView: UITableView!
-
+    @IBOutlet fileprivate weak var indicator: UIActivityIndicatorView!
+    
     fileprivate let channelPresenter = ChannelPresenter()
     fileprivate var channels: [Channel] = []
     fileprivate var allChannels: [Channel] = []
@@ -30,8 +31,8 @@ class ChannelsViewController: BaseViewController {
         title = NSLocalizedString("channels", comment: "").uppercased()
 
         //setting UI
-        let filterBarButton = UIBarButtonItem(image: UIImage(named: "ic_filter"), style: .done, target: self, action: #selector(actionTapToSortBtn))
-        navigationItem.leftBarButtonItem = filterBarButton
+        let sortBarButton = UIBarButtonItem(image: UIImage(named: "ic_sort"), style: .done, target: self, action: #selector(actionTapToSortBtn))
+        navigationItem.leftBarButtonItem = sortBarButton
 
         //custom search bar
         searchBar.searchBarStyle = UISearchBarStyle.prominent
@@ -65,12 +66,19 @@ class ChannelsViewController: BaseViewController {
         tableView.contentOffset = CGPoint(x: 0, y: -refreshControl.frame.size.height)
 
         //load Data
+        indicator.startAnimating()
         channelPresenter.attachView(view: self)
         channelPresenter.getChannels()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        if !Global.isUpdateChannelsBySorting {
+            Global.isUpdateChannelsBySorting = true
+            indicator.startAnimating()
+            channelPresenter.sortChannels(channels)
+        }
 
         if isLoadData {
             DispatchQueue.main.async {
@@ -97,23 +105,16 @@ class ChannelsViewController: BaseViewController {
             present(nav, animated: true, completion: nil)
         }
     }
-
-    func getTableView() -> UITableView? {
-        if tableView != nil {
-            return tableView
-        }
-        
-        return nil
-    }
 }
 
 extension ChannelsViewController: ChannelView {
 
     func startLoading() {
-        refreshControl.beginRefreshing()
+
     }
 
     func finishLoading() {
+        indicator.stopAnimating()
         refreshControl.endRefreshing()
     }
 
@@ -140,6 +141,8 @@ extension ChannelsViewController: ChannelView {
 extension ChannelsViewController: SortChannelDelegate {
 
     func applySort() {
+        Global.isUpdateTVGuideBySorting = false
+        indicator.startAnimating()
         channelPresenter.sortChannels(allChannels)
     }
 }
@@ -209,5 +212,16 @@ extension ChannelsViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         searchBar.text = ""
         channelPresenter.searchChannels(searchBar.text, allChannels)
+    }
+}
+
+extension ChannelsViewController {
+
+    func getTableView() -> UITableView? {
+        if tableView != nil {
+            return tableView
+        }
+
+        return nil
     }
 }

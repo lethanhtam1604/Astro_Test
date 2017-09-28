@@ -33,9 +33,7 @@ class ChannelPresenter: NSObject {
             FavouriteManager.getInstance().setFavouriteChannels(DatabaseHelper.getInstance().getChannels() ?? [Channel]())
         }
         APIHelper.getChannels { [weak self] (_, channels) in
-
             let result = channels?.sorted(by: { (s0, s1) -> Bool in
-
                 if UserDefaultManager.getInstance().getChannelStatusSort() == 0 {
                     if let number1 = s0.channelStbNumber, let number2 = s1.channelStbNumber {
                         return number1 < number2
@@ -45,12 +43,10 @@ class ChannelPresenter: NSObject {
                         return title1 < title2
                     }
                 }
-
                 return false
             })
 
             ChannelManager.getInstance().setChannels(result ?? [Channel]())
-
             self?.channelView?.setChannels(channels: result)
             self?.channelView?.finishLoading()
         }
@@ -89,7 +85,6 @@ class ChannelPresenter: NSObject {
 
         DispatchQueue.global().async {
             let result = channels.sorted(by: { (s0, s1) -> Bool in
-
                 if UserDefaultManager.getInstance().getChannelStatusSort() == 0 {
                     if let number1 = s0.channelStbNumber, let number2 = s1.channelStbNumber {
                         return number1 < number2
@@ -99,7 +94,6 @@ class ChannelPresenter: NSObject {
                         return title1 < title2
                     }
                 }
-
                 return false
             })
 

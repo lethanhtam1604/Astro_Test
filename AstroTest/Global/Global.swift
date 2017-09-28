@@ -23,6 +23,9 @@ class Global {
     static let colorLine = UIColor(0x9DCDEC)
     static let colorSeparator = UIColor(0xE6E7E8)
 
+    static var isUpdateChannelsBySorting = true
+    static var isUpdateTVGuideBySorting = true
+
     static var currentWorkFlow = WorkFlow.splashScreen.hashValue
 }
 

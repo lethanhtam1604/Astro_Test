@@ -15,7 +15,7 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
     fileprivate var CELL_WIDTH = 150.0
     fileprivate var CELL_MAXWIDTH = 200.0
     fileprivate let STATUS_BAR = UIApplication.shared.statusBarFrame.height
-    fileprivate var cellAttrsDictionary: [IndexPath: UICollectionViewLayoutAttributes] = [:]
+    var cellAttrsDictionary: [IndexPath: UICollectionViewLayoutAttributes] = [:]
     fileprivate var contentSize = CGSize.zero
     var dataSourceDidUpdate = true
 
@@ -99,7 +99,7 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
                             if item == 0 {
                                 CELL_WIDTH = 120
                                 xPos = Double(item) * CELL_WIDTH
-                                
+
                                 earlierTime = DateUtil.string(format: DateUtil.DateFormat.yyyymmdd) + " 00:00:00.0"
 
                             } else {
@@ -121,7 +121,7 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
                                 if let displayDuration = event?.displayDuration {
                                     durationTime = DateUtil.string(format: DateUtil.DateFormat.yyyymmdd) + " " + displayDuration + ".0"
                                 }
-                                
+
                                 let ealierMinutes = DateUtil.minutes(earlierTime, laterTime, format: DateUtil.DateFormat.yyyymmddhhmmssS)
                                 let laterMinutes = DateUtil.minutesFromDate(durationTime, format: DateUtil.DateFormat.yyyymmddhhmmssS)
 
@@ -186,18 +186,19 @@ extension CustomCollectionViewLayout {
 
         let earlierTime = DateUtil.string(format: DateUtil.DateFormat.yyyymmdd) + " 00:00:00.0"
         let laterTime = DateUtil.string()
-
+        
         let minutes = DateUtil.minutes(earlierTime, laterTime, format: DateUtil.DateFormat.yyyymmddhhmmssS)
-
+        
         return CGFloat(120 + 100 + (minutes * Int(CELL_MAXWIDTH)) / 60)
     }
-
+    
     func getRowForCurrentTime() -> Int {
-
+        
         let earlierTime = DateUtil.string(format: DateUtil.DateFormat.yyyymmdd) + " 00:00:00.0"
         let laterTime = DateUtil.string()
-
+        
         let minutes = DateUtil.minutes(earlierTime, laterTime, format: DateUtil.DateFormat.yyyymmddhhmmssS)
+        
         return minutes / 60 + 1
     }
 }

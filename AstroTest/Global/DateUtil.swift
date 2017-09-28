@@ -75,4 +75,19 @@ class DateUtil: NSObject {
         let minutes = calendar.component(.minute, from: date)
         return hours * 60 + minutes
     }
+
+    static func hours(_ earlierDate: String = DateUtil.string(), _ laterDate: String = DateUtil.string(), format: DateFormat = .yyyymmddhhmmssS) -> Int {
+        kDateFormatter.dateFormat = format.rawValue
+        guard let dateEarlier = kDateFormatter.date(from: earlierDate) else {
+            return 0
+        }
+        guard let dateLater = kDateFormatter.date(from: laterDate) else {
+            return 0
+        }
+
+        let interval = dateLater.timeIntervalSince(dateEarlier)
+        let ti = NSInteger(interval)
+        let hours = ti / 60 / 60
+        return hours
+    }
 }

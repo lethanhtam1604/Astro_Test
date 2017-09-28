@@ -30,5 +30,26 @@ class TVGuideCollectionViewCell: UICollectionViewCell {
         } else {
             timeLabel.text = ""
         }
+
+        let earlierTime = DateUtil.string(format: DateUtil.DateFormat.yyyymmdd) + " 00:00:00.0"
+
+        let beginTime = event.displayDateTime ?? ""
+        let beginMinute = DateUtil.minutes(earlierTime, beginTime, format: DateUtil.DateFormat.yyyymmddhhmmssS)
+
+        let nowTime = DateUtil.string()
+        let nowMinute = DateUtil.minutes(earlierTime, nowTime, format: DateUtil.DateFormat.yyyymmddhhmmssS)
+
+        var durationTime = ""
+        if let displayDuration = event.displayDuration {
+            durationTime = DateUtil.string(format: DateUtil.DateFormat.yyyymmdd) + " " + displayDuration + ".0"
+        }
+
+        let durationMinutes = DateUtil.minutesFromDate(durationTime, format: DateUtil.DateFormat.yyyymmddhhmmssS)
+
+        if nowMinute >= beginMinute && nowMinute < durationMinutes + beginMinute {
+            backgroundColor = Global.colorGray
+        } else {
+            backgroundColor = UIColor.white
+        }
     }
 }

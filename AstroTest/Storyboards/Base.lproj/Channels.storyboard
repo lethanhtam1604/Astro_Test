@@ -32,19 +32,30 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dww-9X-iO2">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="F4a-9Z-W9r"/>
+                                    <constraint firstAttribute="width" constant="20" id="eFN-ld-1cd"/>
+                                </constraints>
+                                <color key="color" red="0.95686274510000002" green="0.72156862749999995" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rLJ-dH-cFg" firstAttribute="top" secondItem="Wap-7e-3cc" secondAttribute="bottom" id="Mfw-O6-Lo4"/>
+                            <constraint firstItem="dww-9X-iO2" firstAttribute="centerY" secondItem="eo5-Sh-ds6" secondAttribute="centerY" id="OEZ-Dj-2X4"/>
                             <constraint firstItem="Wap-7e-3cc" firstAttribute="top" secondItem="g7X-QE-TZ3" secondAttribute="bottom" id="SeI-e7-aq1"/>
                             <constraint firstItem="g7X-QE-TZ3" firstAttribute="leading" secondItem="eo5-Sh-ds6" secondAttribute="leading" id="Y4y-GV-pfA"/>
                             <constraint firstAttribute="trailing" secondItem="Wap-7e-3cc" secondAttribute="trailing" id="irz-3j-ffu"/>
                             <constraint firstItem="Wap-7e-3cc" firstAttribute="leading" secondItem="eo5-Sh-ds6" secondAttribute="leading" id="jfY-W4-FxI"/>
+                            <constraint firstItem="dww-9X-iO2" firstAttribute="centerX" secondItem="eo5-Sh-ds6" secondAttribute="centerX" id="v9r-t9-OTr"/>
                             <constraint firstItem="g7X-QE-TZ3" firstAttribute="top" secondItem="yXU-Wy-SNP" secondAttribute="bottom" id="yHz-xB-ZYT"/>
                             <constraint firstAttribute="trailing" secondItem="g7X-QE-TZ3" secondAttribute="trailing" id="yJo-WD-ayo"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="indicator" destination="dww-9X-iO2" id="Md6-4B-PN2"/>
                         <outlet property="searchBar" destination="g7X-QE-TZ3" id="FAZ-38-4ox"/>
                         <outlet property="tableView" destination="Wap-7e-3cc" id="OEE-dX-NZn"/>
                     </connections>

@@ -101,8 +101,9 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate, UINavi
             }
         } else if item.tag == 2 && previousTag == 2 {
             if let collectionView = tvGuideViewController.getCollectionView() {
-                let indexPath = NSIndexPath(row: 0, section: 0)
-                collectionView.scrollToItem(at: indexPath as IndexPath, at: .top, animated: true)
+                let cellSize = CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+                let contentOffset = collectionView.contentOffset
+                collectionView.scrollRectToVisible(CGRect(x: contentOffset.x, y: -60, width: cellSize.width, height: cellSize.height), animated: true)
             }
         } else if item.tag == 3 && previousTag == 3 {
             if let tableView = favouritesViewController.getTableView() {
