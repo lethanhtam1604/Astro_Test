@@ -38,10 +38,7 @@
 		E643BFAB1F76572F00867754 /* ChannelLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643BFAA1F76572F00867754 /* ChannelLogo.swift */; };
 		E643BFAD1F7665B200867754 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643BFAC1F7665B200867754 /* UIImageView.swift */; };
 		E64885F31F739E640044B3C2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64885E81F739E640044B3C2 /* MainViewController.swift */; };
-		E64885F41F739E640044B3C2 /* PopupDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64885E91F739E640044B3C2 /* PopupDialogViewController.swift */; };
 		E64885F51F739E640044B3C2 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64885EA1F739E640044B3C2 /* SplashScreenViewController.swift */; };
-		E64885F61F739E640044B3C2 /* BasePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64885EC1F739E640044B3C2 /* BasePopupView.swift */; };
-		E64885F91F739E640044B3C2 /* BasePopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E64885F01F739E640044B3C2 /* BasePopupView.xib */; };
 		E64886041F739E820044B3C2 /* MyAvatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E64886011F739E820044B3C2 /* MyAvatar.jpg */; };
 		E64886121F739E890044B3C2 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64886091F739E890044B3C2 /* DatabaseHelper.swift */; };
 		E64886151F739E890044B3C2 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = E648860D1F739E890044B3C2 /* Response.swift */; };
@@ -65,7 +62,6 @@
 		E64AB25C1F74C33500608435 /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64AB25B1F74C33500608435 /* ChannelTableViewCell.swift */; };
 		E64D03641F77E36B00571B57 /* SortChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64D03631F77E36B00571B57 /* SortChannelViewController.swift */; };
 		E64F50461F7A9B31009DC625 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F50451F7A9B31009DC625 /* TimeManager.swift */; };
-		E64F50481F7A9B55009DC625 /* ChannelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F50471F7A9B55009DC625 /* ChannelManager.swift */; };
 		E64F504A1F7AB0DB009DC625 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F50491F7AB0DB009DC625 /* Time.swift */; };
 		E64F504C1F7B49DE009DC625 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F504B1F7B49DE009DC625 /* Event.swift */; };
 		E64F504E1F7B7D22009DC625 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F504D1F7B7D22009DC625 /* String.swift */; };
@@ -142,10 +138,7 @@
 		E643BFAA1F76572F00867754 /* ChannelLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelLogo.swift; sourceTree = "<group>"; };
 		E643BFAC1F7665B200867754 /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		E64885E81F739E640044B3C2 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		E64885E91F739E640044B3C2 /* PopupDialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogViewController.swift; sourceTree = "<group>"; };
 		E64885EA1F739E640044B3C2 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
-		E64885EC1F739E640044B3C2 /* BasePopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePopupView.swift; sourceTree = "<group>"; };
-		E64885F01F739E640044B3C2 /* BasePopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasePopupView.xib; sourceTree = "<group>"; };
 		E64886011F739E820044B3C2 /* MyAvatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MyAvatar.jpg; sourceTree = "<group>"; };
 		E64886091F739E890044B3C2 /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		E648860D1F739E890044B3C2 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -169,7 +162,6 @@
 		E64AB25B1F74C33500608435 /* ChannelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelTableViewCell.swift; sourceTree = "<group>"; };
 		E64D03631F77E36B00571B57 /* SortChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortChannelViewController.swift; sourceTree = "<group>"; };
 		E64F50451F7A9B31009DC625 /* TimeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
-		E64F50471F7A9B55009DC625 /* ChannelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelManager.swift; sourceTree = "<group>"; };
 		E64F50491F7AB0DB009DC625 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		E64F504B1F7B49DE009DC625 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		E64F504D1F7B7D22009DC625 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -249,7 +241,6 @@
 				E650D9A31F789E0400694499 /* TVGuideViewController.swift */,
 				E64AB2441F74AE8600608435 /* FavouritesViewController.swift */,
 				E64AB2551F74BCC600608435 /* SettingsViewController.swift */,
-				E64885E91F739E640044B3C2 /* PopupDialogViewController.swift */,
 				E64D03631F77E36B00571B57 /* SortChannelViewController.swift */,
 				E63E59F81F795879008B115A /* ChannelDetailViewController.swift */,
 				E63E59FA1F796580008B115A /* ProfileViewController.swift */,
@@ -261,7 +252,6 @@
 		E64885EB1F739E640044B3C2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E64885EC1F739E640044B3C2 /* BasePopupView.swift */,
 				E64AB25B1F74C33500608435 /* ChannelTableViewCell.swift */,
 				E650D9961F788FAA00694499 /* SortTableViewCell.swift */,
 				E650D9981F78954800694499 /* SortHeaderTableViewCell.swift */,
@@ -277,7 +267,6 @@
 		E64885EF1F739E640044B3C2 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
-				E64885F01F739E640044B3C2 /* BasePopupView.xib */,
 				E64AB2581F74C32400608435 /* ChannelTableViewCell.xib */,
 				E650D9931F788F9800694499 /* SortTableViewCell.xib */,
 				E650D99C1F78955500694499 /* SortHeaderTableViewCell.xib */,
@@ -308,7 +297,6 @@
 				E64886091F739E890044B3C2 /* DatabaseHelper.swift */,
 				E650D99E1F78977E00694499 /* UserDefaultManager.swift */,
 				E641BC261F78D938003D3547 /* FavouriteManager.swift */,
-				E64F50471F7A9B55009DC625 /* ChannelManager.swift */,
 				E64F50451F7A9B31009DC625 /* TimeManager.swift */,
 			);
 			path = Managers;
@@ -489,7 +477,6 @@
 				E63E5A081F7968EB008B115A /* Main.storyboard in Resources */,
 				E63E5A581F7A54EA008B115A /* OnNowCollectionViewCell.xib in Resources */,
 				E63E5A461F7A0B50008B115A /* TVGuideCollectionViewCell.xib in Resources */,
-				E64885F91F739E640044B3C2 /* BasePopupView.xib in Resources */,
 				E63E5A111F7968F7008B115A /* Favourites.storyboard in Resources */,
 				E64886271F73A0200044B3C2 /* Assets.xcassets in Resources */,
 				E63E5A0B1F7968F1008B115A /* Channels.storyboard in Resources */,
@@ -579,9 +566,7 @@
 				E63E59F51F794474008B115A /* FavouritePresenter.swift in Sources */,
 				E650D99F1F78977E00694499 /* UserDefaultManager.swift in Sources */,
 				E63E5A4E1F7A0C4D008B115A /* TVGuideCollectionViewCell.swift in Sources */,
-				E64885F61F739E640044B3C2 /* BasePopupView.swift in Sources */,
 				E64886161F739E890044B3C2 /* APIHelper.swift in Sources */,
-				E64F50481F7A9B55009DC625 /* ChannelManager.swift in Sources */,
 				E64886201F739E910044B3C2 /* Global.swift in Sources */,
 				E64F50461F7A9B31009DC625 /* TimeManager.swift in Sources */,
 				E63E59FE1F796738008B115A /* BaseViewController.swift in Sources */,
@@ -623,7 +608,6 @@
 				E64886251F73A0120044B3C2 /* AppDelegate.swift in Sources */,
 				E6A4B06A1F776E8000E4A827 /* NSAttributedString.swift in Sources */,
 				E648861F1F739E910044B3C2 /* UIView.swift in Sources */,
-				E64885F41F739E640044B3C2 /* PopupDialogViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

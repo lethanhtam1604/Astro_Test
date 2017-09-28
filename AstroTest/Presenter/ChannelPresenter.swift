@@ -46,7 +46,6 @@ class ChannelPresenter: NSObject {
                 return false
             })
 
-            ChannelManager.getInstance().setChannels(result ?? [Channel]())
             self?.channelView?.setChannels(channels: result)
             self?.channelView?.finishLoading()
         }
