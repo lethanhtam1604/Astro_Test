@@ -28,11 +28,11 @@ class SortChannelViewController: BaseViewController {
 
         //setting navigation bar items
         let cancelBarButton = UIBarButtonItem(title: NSLocalizedString("cancel", comment: "").uppercased(), style: .done, target: self, action: #selector(actionTapToCancelBtn))
-        cancelBarButton.setTitleTextAttributes([NSForegroundColorAttributeName: Global.colorMain, NSFontAttributeName: UIFont(name: "OpenSans-semibold", size: 15) ?? UIFont.systemFontSize], for: UIControlState.normal)
+        cancelBarButton.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: Global.colorMain, NSAttributedStringKey.font: UIFont(name: "OpenSans-semibold", size: 15) ?? UIFont.systemFontSize], for: UIControlState.normal)
         navigationItem.leftBarButtonItem = cancelBarButton
 
         let applyBarButton = UIBarButtonItem(title: NSLocalizedString("apply", comment: "").uppercased(), style: .done, target: self, action: #selector(actionTapToApplyBtn))
-        applyBarButton.setTitleTextAttributes([NSForegroundColorAttributeName: Global.colorMain, NSFontAttributeName: UIFont(name: "OpenSans-semibold", size: 15) ?? UIFont.systemFontSize], for: UIControlState.normal)
+        applyBarButton.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: Global.colorMain, NSAttributedStringKey.font: UIFont(name: "OpenSans-semibold", size: 15) ?? UIFont.systemFontSize], for: UIControlState.normal)
         navigationItem.rightBarButtonItem = applyBarButton
 
         //setup tableView
@@ -52,11 +52,11 @@ class SortChannelViewController: BaseViewController {
 
     }
 
-    func actionTapToCancelBtn() {
+    @objc func actionTapToCancelBtn() {
         dismiss(animated: true, completion: nil)
     }
 
-    func actionTapToApplyBtn() {
+    @objc func actionTapToApplyBtn() {
         UserDefaultManager.getInstance().setChannelStatusSort(value: channelStatusIndex)
         delegate?.applySort()
         dismiss(animated: true, completion: nil)

@@ -23,7 +23,7 @@ class ProfileViewController: BaseViewController {
         self.navigationItem.leftBarButtonItem = backBarButton
 
         let saveBarButton = UIBarButtonItem(title: NSLocalizedString("save", comment: "").uppercased(), style: .done, target: self, action: #selector(actionTapToSaveBtn))
-        saveBarButton.setTitleTextAttributes([NSForegroundColorAttributeName: Global.colorMain, NSFontAttributeName: UIFont(name: "OpenSans-semibold", size: 15) ?? UIFont.systemFontSize], for: UIControlState.normal)
+        saveBarButton.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: Global.colorMain, NSAttributedStringKey.font: UIFont(name: "OpenSans-semibold", size: 15) ?? UIFont.systemFontSize], for: UIControlState.normal)
         self.navigationItem.rightBarButtonItem = saveBarButton
     }
 
@@ -32,11 +32,11 @@ class ProfileViewController: BaseViewController {
 
     }
 
-    func actionTapToBackBtn() {
+    @objc func actionTapToBackBtn() {
         navigationController?.popViewController(animated: true)
     }
 
-    func actionTapToSaveBtn() {
+    @objc func actionTapToSaveBtn() {
         navigationController?.popViewController(animated: true)
     }
 }

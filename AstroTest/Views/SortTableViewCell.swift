@@ -53,7 +53,7 @@ extension SortTableViewCell {
 
     func heightForCell() -> CGFloat {
 
-        let nameHeight = NSString(string: nameLabel.text ?? "").boundingRect(with: CGSize(width: frame.width - 24 - 5, height: 1000), options: NSStringDrawingOptions.usesFontLeading.union(NSStringDrawingOptions.usesLineFragmentOrigin), attributes: [NSFontAttributeName: nameLabel.font], context: nil)
+        let nameHeight = NSString(string: nameLabel.text ?? "").boundingRect(with: CGSize(width: frame.width - 24 - 5, height: 1000), options: NSStringDrawingOptions.usesFontLeading.union(NSStringDrawingOptions.usesLineFragmentOrigin), attributes: [NSAttributedStringKey.font: nameLabel.font], context: nil)
 
         return nameHeight.height + 30
     }

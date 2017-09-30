@@ -102,9 +102,9 @@ extension ChannelTableViewCell {
         let wholeStr = "\(channelTitle)\(channelStbNumber)"
 
         let attributedString = NSMutableAttributedString(string: wholeStr)
-        attributedString.addAttribute(NSForegroundColorAttributeName, value: Global.colorMain, range: (wholeStr as NSString).range(of: channelTitle))
-        attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGray, range: (wholeStr as NSString).range(of: channelStbNumber))
-        attributedString.addAttribute(NSFontAttributeName, value: UIFont(name: "OpenSans", size: 14) ?? UIFont.systemFontSize, range: (wholeStr as NSString).range(of: channelStbNumber))
+        attributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: Global.colorMain, range: (wholeStr as NSString).range(of: channelTitle))
+        attributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.lightGray, range: (wholeStr as NSString).range(of: channelStbNumber))
+        attributedString.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "OpenSans", size: 14) ?? UIFont.systemFontSize, range: (wholeStr as NSString).range(of: channelStbNumber))
         titleLabel.attributedText = attributedString
 
         DispatchQueue.main.async {

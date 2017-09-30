@@ -93,11 +93,11 @@ class ChannelsViewController: BaseViewController {
 
     }
 
-    func handleRefresh(_ refreshControl: UIRefreshControl) {
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         channelPresenter.getChannels()
     }
 
-    func actionTapToSortBtn() {
+    @objc func actionTapToSortBtn() {
         let storyboard = UIStoryboard(name: "Channels", bundle: nil)
         if let viewController = storyboard.instantiateViewController(withIdentifier: "SortChannelViewController") as? SortChannelViewController {
             viewController.delegate = self

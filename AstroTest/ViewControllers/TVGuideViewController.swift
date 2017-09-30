@@ -39,7 +39,7 @@ class TVGuideViewController: BaseViewController {
         navigationItem.leftBarButtonItem = sortBarButton
 
         let todayBarButton = UIBarButtonItem(title: NSLocalizedString("Today", comment: ""), style: .done, target: self, action: #selector(actionTapToTodayButton))
-        todayBarButton.setTitleTextAttributes([NSForegroundColorAttributeName: Global.colorMain, NSFontAttributeName: UIFont(name: "OpenSans-semibold", size: 15) ?? UIFont.systemFontSize], for: UIControlState.normal)
+        todayBarButton.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: Global.colorMain, NSAttributedStringKey.font: UIFont(name: "OpenSans-semibold", size: 15) ?? UIFont.systemFontSize], for: UIControlState.normal)
         navigationItem.rightBarButtonItem = todayBarButton
 
         //setup collectionView
@@ -103,7 +103,7 @@ class TVGuideViewController: BaseViewController {
 
     }
 
-    func actionTapToSortBtn() {
+    @objc func actionTapToSortBtn() {
         let storyboard = UIStoryboard(name: "Channels", bundle: nil)
         if let viewController = storyboard.instantiateViewController(withIdentifier: "SortChannelViewController") as? SortChannelViewController {
             viewController.delegate = self
@@ -116,7 +116,7 @@ class TVGuideViewController: BaseViewController {
         updateCollectionViewForCurrentTime()
     }
 
-    func actionTapToTodayButton() {
+    @objc func actionTapToTodayButton() {
 
     }
 }
@@ -294,7 +294,7 @@ extension TVGuideViewController {
         return nil
     }
 
-    func updateXPosForCurrentTime() {
+    @objc func updateXPosForCurrentTime() {
         self.currentLineView.frame = CGRect(x: self.customCollectionViewLayout.getXPosForCurrentTime() - 25, y: 60 - 20, width: 0, height: self.customCollectionViewLayout.getHeight())
         self.lineView.frame = CGRect(x: 25, y: self.currentLineView.frame.origin.y - 20, width: 2, height: self.currentLineView.frame.height)
 

@@ -53,7 +53,7 @@ class EventDetailViewController: BaseViewController {
 
     }
 
-    func actionTapToBackBtn() {
+    @objc func actionTapToBackBtn() {
         navigationController?.popViewController(animated: true)
     }
 }

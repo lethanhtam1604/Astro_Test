@@ -26,8 +26,8 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate, UINavi
         tabBar.backgroundImage = UIImage()
         tabBar.isTranslucent = false
 
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: Global.colorGray, NSFontAttributeName: UIFont(name: "OpenSans-semibold", size: 10) ?? UIFont.systemFontSize], for: .normal)
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: Global.colorMain, NSFontAttributeName: UIFont(name: "OpenSans-semibold", size: 10) ?? UIFont.systemFontSize], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: Global.colorGray, NSAttributedStringKey.font: UIFont(name: "OpenSans-semibold", size: 10) ?? UIFont.systemFontSize], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: Global.colorMain, NSAttributedStringKey.font: UIFont(name: "OpenSans-semibold", size: 10) ?? UIFont.systemFontSize], for: .selected)
 
         var storyboard = UIStoryboard(name: "Channels", bundle: nil)
         if let viewController = storyboard.instantiateViewController(withIdentifier: "ChannelsViewController") as? ChannelsViewController {
